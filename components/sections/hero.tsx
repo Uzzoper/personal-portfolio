@@ -23,7 +23,7 @@ export function Hero() {
           </div>
 
           {/* Headline */}
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tight min-h-[120px] md:min-h-[auto]">
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tight min-h-[180px] md:min-h-[200px]">
             Building the{' '}
             <span className="text-primary inline-block">
               <Typewriter
