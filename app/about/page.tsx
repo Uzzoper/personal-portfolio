@@ -78,7 +78,7 @@ export default function AboutPage() {
                 <div className="relative pl-6 border-l-2 border-primary">
                   <div className="absolute w-3 h-3 bg-primary rounded-full -left-[7px] top-2" />
                   <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-1">
-                    <h3 className="text-lg font-bold">B.S. in Software Engineering</h3>
+                    <h3 className="text-lg font-bold">Software Engineering</h3>
                     <span className="text-sm text-muted-foreground bg-muted/50 px-2 py-1 rounded">
                       2024 — Present
                     </span>
