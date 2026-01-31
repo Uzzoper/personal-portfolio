@@ -26,7 +26,7 @@ export function Hero() {
           </div>
 
           {/* Headline */}
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tight min-h-[180px] md:min-h-[200px]">
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tight min-h-[280px] md:min-h-[340px]">
             {dictionary.hero.headline}{' '}
             <span className="text-primary inline-block">
               <Typewriter
