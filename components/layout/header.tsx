@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
+import { ModeToggle } from "@/components/mode-toggle";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -35,6 +36,7 @@ export function Header() {
               {link.label}
             </Link>
           ))}
+          <ModeToggle />
           <Button asChild>
             <Link href="/contact">Hire Me</Link>
           </Button>
@@ -61,6 +63,10 @@ export function Header() {
                   {link.label}
                 </Link>
               ))}
+              <div className="flex gap-4 items-center mt-2">
+                <ModeToggle />
+                <span className="text-muted-foreground">Toggle Theme</span>
+              </div>
               <Button asChild className="mt-4">
                 <Link href="/contact">Hire Me</Link>
               </Button>
