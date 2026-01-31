@@ -6,8 +6,10 @@ import { Github, Linkedin, Mail, MessageSquare, Phone, Copy, Check } from "lucid
 import Link from "next/link";
 import { useState } from "react";
 import { toast } from "sonner";
+import { useLanguage } from "@/components/language-context";
 
 export default function ContactPage() {
+    const { dictionary } = useLanguage();
     const [copiedEmail, setCopiedEmail] = useState(false);
     const [copiedPhone, setCopiedPhone] = useState(false);
 
@@ -21,11 +23,11 @@ export default function ContactPage() {
             if (type === 'email') {
                 setCopiedEmail(true);
                 setTimeout(() => setCopiedEmail(false), 2000);
-                toast.success("Email copied to clipboard!");
+                toast.success(dictionary.contact.copyEmail + "!");
             } else {
                 setCopiedPhone(true);
                 setTimeout(() => setCopiedPhone(false), 2000);
-                toast.success("Phone number copied to clipboard!");
+                toast.success(dictionary.contact.copyPhone + "!");
             }
         } catch (err) {
             toast.error("Failed to copy text.");
@@ -38,10 +40,9 @@ export default function ContactPage() {
 
                 {/* Header */}
                 <div className="max-w-2xl mx-auto text-center mb-12">
-                    <h1 className="text-4xl md:text-5xl font-bold mb-6">Contact Me</h1>
+                    <h1 className="text-4xl md:text-5xl font-bold mb-6">{dictionary.contact.title}</h1>
                     <p className="text-xl text-muted-foreground">
-                        Have a project in mind or want to discuss a job opportunity?
-                        I'm always open to new challenges and collaborations.
+                        {dictionary.contact.subtitle}
                     </p>
                 </div>
 
@@ -49,9 +50,9 @@ export default function ContactPage() {
 
                     <Card>
                         <CardHeader>
-                            <CardTitle>Contact Information</CardTitle>
+                            <CardTitle>{dictionary.contact.infoTitle}</CardTitle>
                             <CardDescription>
-                                Start a conversation using your preferred method.
+                                {dictionary.contact.infoDesc}
                             </CardDescription>
                         </CardHeader>
                         <CardContent className="space-y-6">
@@ -69,7 +70,7 @@ export default function ContactPage() {
                                     variant="ghost"
                                     size="icon"
                                     onClick={() => handleCopy(CONTACT_EMAIL, 'email')}
-                                    title="Copy Email"
+                                    title={dictionary.contact.copyEmail}
                                 >
                                     {copiedEmail ? <Check className="h-4 w-4 text-green-500" /> : <Copy className="h-4 w-4" />}
                                 </Button>
@@ -89,14 +90,14 @@ export default function ContactPage() {
                                         className="inline-flex items-center text-sm text-green-600 hover:text-green-700 font-medium mt-1"
                                     >
                                         <MessageSquare className="h-3 w-3 mr-1" />
-                                        Chat on WhatsApp
+                                        {dictionary.contact.chatWhatsApp}
                                     </Link>
                                 </div>
                                 <Button
                                     variant="ghost"
                                     size="icon"
                                     onClick={() => handleCopy(CONTACT_PHONE, 'phone')}
-                                    title="Copy Number"
+                                    title={dictionary.contact.copyPhone}
                                 >
                                     {copiedPhone ? <Check className="h-4 w-4 text-green-500" /> : <Copy className="h-4 w-4" />}
                                 </Button>
@@ -129,7 +130,7 @@ export default function ContactPage() {
                                 <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
                             </span>
                             <p className="font-medium text-primary">
-                                Currently open for new opportunities
+                                {dictionary.contact.availability}
                             </p>
                         </CardContent>
                     </Card>

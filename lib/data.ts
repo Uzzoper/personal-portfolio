@@ -1,5 +1,6 @@
 export const projects = [
     {
+        id: "flappynaruu",
         title: "Flappy Naruu",
         description: "A fun Flappy Bird-style game built from zero with modern web technologies.",
         technologies: ["React", "TypeScript", "Canvas API", "Java", "Spring", "Postgres", "Docker", "JUnit", "Vercel", "Railway"],
@@ -10,6 +11,7 @@ export const projects = [
         demoUrl: "https://flappynaruu.vercel.app/",
     },
     {
+        id: "eventclean",
         title: "EventClean",
         description: "API for event and venue management using clean architecture principles.",
         technologies: ["Java 17", "Spring", "Docker", "Flyway", "Clean Architecture", "Postgres"],
@@ -18,6 +20,7 @@ export const projects = [
         ],
     },
     {
+        id: "movieflix",
         title: "MovieFlix",
         description: "A REST API for movie catalog management.",
         technologies: ["Java", "Spring Boot", "REST API", "Postgres", "Docker", "Flyway"],
@@ -26,6 +29,7 @@ export const projects = [
         ],
     },
     {
+        id: "thermometer",
         title: "Thermometer of Ponta Grossa",
         description: "A weather website showing real-time temperature for Ponta Grossa.",
         technologies: ["JavaScript", "Weather API", "HTML", "CSS", "Vercel"],
@@ -35,6 +39,7 @@ export const projects = [
         demoUrl: "https://otermometrodepg.vercel.app",
     },
     {
+        id: "portfolio",
         title: "Portfolio",
         description: "My personal portfolio built with Next.js and Tailwind CSS.",
         technologies: ["Next.js", "React", "TypeScript", "TailwindCSS", "shadcn/ui"],
