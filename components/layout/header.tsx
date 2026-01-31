@@ -6,16 +6,19 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import { ModeToggle } from "@/components/mode-toggle";
-
-const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/projects", label: "Projects" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
-];
+import { LanguageToggle } from "@/components/language-toggle";
+import { useLanguage } from "@/components/language-context";
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const { dictionary } = useLanguage();
+
+  const navLinks = [
+    { href: "/", label: dictionary.header.home },
+    { href: "/projects", label: dictionary.header.projects },
+    { href: "/about", label: dictionary.header.about },
+    { href: "/contact", label: dictionary.header.contact },
+  ];
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -36,9 +39,12 @@ export function Header() {
               {link.label}
             </Link>
           ))}
-          <ModeToggle />
+          <div className="flex items-center gap-2 border-l pl-4">
+            <LanguageToggle />
+            <ModeToggle />
+          </div>
           <Button asChild>
-            <Link href="/contact">Hire Me</Link>
+            <Link href="/contact">{dictionary.header.hireMe}</Link>
           </Button>
         </nav>
 
@@ -63,12 +69,16 @@ export function Header() {
                   {link.label}
                 </Link>
               ))}
-              <div className="flex gap-4 items-center mt-2">
+              <div className="flex gap-4 items-center mt-2 border-t pt-4">
+                <LanguageToggle />
+                <span className="text-sm text-muted-foreground">Select Language</span>
+              </div>
+              <div className="flex gap-4 items-center">
                 <ModeToggle />
-                <span className="text-muted-foreground">Toggle Theme</span>
+                <span className="text-sm text-muted-foreground">{dictionary.header.toggleTheme}</span>
               </div>
               <Button asChild className="mt-4">
-                <Link href="/contact">Hire Me</Link>
+                <Link href="/contact" onClick={() => setIsOpen(false)}>{dictionary.header.hireMe}</Link>
               </Button>
             </nav>
           </SheetContent>
