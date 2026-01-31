@@ -57,6 +57,8 @@ export const pt = {
     projects: {
         title: "Meus Projetos",
         subtitle: "Uma lista abrangente dos meus projetos de engenharia de software, desde APIs de backend até aplicações web full-stack.",
+        viewLive: "Ver Demo ao Vivo",
+        playGame: "Jogar Agora",
         items: {
             flappynaruu: {
                 description: "Um jogo divertido no estilo Flappy Bird construído do zero com tecnologias web modernas.",
