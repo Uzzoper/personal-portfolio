@@ -13,6 +13,7 @@ export default function ProjectsPage() {
 
         return {
             ...project,
+            title: (dictProject as any)?.title || project.title,
             description: dictProject?.description || project.description
         };
     });

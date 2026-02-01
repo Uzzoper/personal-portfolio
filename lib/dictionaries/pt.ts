@@ -70,9 +70,11 @@ export const pt = {
                 description: "Uma API REST para gestão de catálogo de filmes.",
             },
             thermometer: {
+                title: "Termômetro de Ponta Grossa",
                 description: "Um site de clima que mostra a temperatura em tempo real para Ponta Grossa.",
             },
             portfolio: {
+                title: "Portfólio",
                 description: "Meu portfólio pessoal construído com Next.js e Tailwind CSS.",
             }
         }

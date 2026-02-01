@@ -12,11 +12,12 @@ export function FeaturedProjects() {
 
   const translatedProjects = projects.slice(0, 3).map(project => {
     const key = project.id as keyof typeof dictionary.projects.items;
-    
+
     const dictProject = dictionary.projects.items[key];
 
     return {
       ...project,
+      title: (dictProject as any)?.title || project.title,
       description: dictProject?.description || project.description
     };
   });
