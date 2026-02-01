@@ -43,7 +43,7 @@ export function Header() {
             <LanguageToggle />
             <ModeToggle />
           </div>
-          <Button asChild>
+          <Button asChild className="w-28">
             <Link href="/contact">{dictionary.header.hireMe}</Link>
           </Button>
         </nav>
@@ -77,7 +77,7 @@ export function Header() {
                 <ModeToggle />
                 <span className="text-sm text-muted-foreground">{dictionary.header.toggleTheme}</span>
               </div>
-              <Button asChild className="mt-4">
+              <Button asChild className="mt-4 w-28">
                 <Link href="/contact" onClick={() => setIsOpen(false)}>{dictionary.header.hireMe}</Link>
               </Button>
             </nav>
