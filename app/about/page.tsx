@@ -37,7 +37,7 @@ export default function AboutPage() {
                     {/* Profile Picture */}
                     <div className="relative h-72 w-72 md:h-80 md:w-80 lg:h-96 lg:w-96 shrink-0">
                         <Image
-                            src="/profile.jpeg"
+                            src="/juan.jpeg"
                             alt="Juan Peruzzo"
                             fill
                             sizes="(max-width: 768px) 288px, (max-width: 1024px) 320px, 384px"
