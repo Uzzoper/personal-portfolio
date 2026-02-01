@@ -29,7 +29,7 @@ export default function ContactPage() {
                 setTimeout(() => setCopiedPhone(false), 2000);
                 toast.success(dictionary.contact.copyPhone + "!");
             }
-        } catch (err) {
+        } catch {
             toast.error("Failed to copy text.");
         }
     };

@@ -14,14 +14,17 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
     const [locale, setLocaleState] = useState<Locale>("en");
     const [dictionary, setDictionary] = useState<Dictionary>(dictionaries.en);
+    const [isHydrated, setIsHydrated] = useState(false);
 
     useEffect(() => {
         const savedLocale = localStorage.getItem("locale") as Locale;
         const browserLocale = navigator.language.startsWith("pt") ? "pt" : "en";
         const initialLocale = savedLocale || browserLocale;
 
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setLocaleState(initialLocale);
         setDictionary(dictionaries[initialLocale]);
+        setIsHydrated(true);
     }, []);
 
     const setLocale = (newLocale: Locale) => {
@@ -29,6 +32,10 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
         setDictionary(dictionaries[newLocale]);
         localStorage.setItem("locale", newLocale);
     };
+
+    if (!isHydrated) {
+        return null;
+    }
 
     return (
         <LanguageContext.Provider value={{ locale, dictionary, setLocale }}>
