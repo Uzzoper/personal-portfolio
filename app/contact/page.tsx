@@ -124,12 +124,12 @@ export default function ContactPage() {
 
                     {/* Availability Status */}
                     <Card className="bg-primary/5 border-primary/20">
-                        <CardContent className="pt-6 flex items-center justify-center gap-4">
+                        <CardContent className="flex items-center justify-center gap-4 py-0">
                             <span className="relative flex h-3 w-3">
                                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                                 <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
                             </span>
-                            <p className="font-medium text-primary">
+                            <p className="font-medium text-primary text-center">
                                 {dictionary.contact.availability}
                             </p>
                         </CardContent>
