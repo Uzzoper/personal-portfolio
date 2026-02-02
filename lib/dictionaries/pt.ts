@@ -51,7 +51,7 @@ export const pt = {
         skillsTitle: "Habilidades e Tecnologias",
         connect: "Conectar",
         openForWork: "Disponível para Trabalho",
-        openForWorkDesc: "Atualmente estou em busca de novas oportunidades. Se você tem um projeto em mente ou quer colaborar, vamos conversar!",
+        openForWorkDesc: "Atualmente estou em busca de novas oportunidades. Tem um projeto em mente ou precisa de colaboração? Adoraria conversar e entender como posso ajudar!",
         getInTouch: "Entrar em contato",
     },
     projects: {
@@ -90,6 +90,8 @@ export const pt = {
         chatWhatsApp: "Conversar no WhatsApp",
     },
     footer: {
+        navigation: "Navegue",
+        connect: "Conectar",
         rights: "Todos os direitos reservados.",
         builtWith: "Feito com",
         and: "e",

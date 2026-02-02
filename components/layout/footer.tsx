@@ -34,7 +34,7 @@ export function Footer() {
 
           {/* Links */}
           <div className="space-y-4">
-            <h4 className="text-sm font-semibold">{dictionary.header.home}</h4>
+            <h4 className="text-sm font-semibold">{dictionary.footer.navigation}</h4>
             <nav className="flex flex-col gap-2">
               {footerLinks.map((link) => (
                 <Link
@@ -50,7 +50,7 @@ export function Footer() {
 
           {/* Social */}
           <div className="space-y-4">
-            <h4 className="text-sm font-semibold">{dictionary.about.connect}</h4>
+            <h4 className="text-sm font-semibold">{dictionary.footer.connect}</h4>
             <div className="flex gap-4">
               {socialLinks.map((social) => (
                 <Link

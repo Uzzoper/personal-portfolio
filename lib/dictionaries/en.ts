@@ -90,6 +90,8 @@ export const en = {
         chatWhatsApp: "Chat on WhatsApp",
     },
     footer: {
+        navigation: "Navigate",
+        connect: "Connect",
         rights: "All rights reserved.",
         builtWith: "Built with",
         and: "and",
