@@ -47,4 +47,20 @@ export const projects = [
             { label: "Repository", url: "https://github.com/Uzzoper/personal-portfolio" },
         ],
     },
+    {
+        id: "jishuu",
+        title: "Jishuu",
+        description: "Jishuu is a platform to organize your studies efficiently and intuitively. Currently in demo/testing phase.",
+        technologies: [
+            "Next.js",
+            "React",
+            "TypeScript",
+            "Tailwind CSS",
+            "shadcn/ui",
+            "Radix UI",
+            "Lucide React"
+        ],
+        githubRepos: [],
+        demoUrl: "https://jishuu.vercel.app/",
+    },
 ];

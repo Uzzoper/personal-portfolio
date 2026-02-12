@@ -76,6 +76,9 @@ export const pt = {
             portfolio: {
                 title: "Portfólio",
                 description: "Meu portfólio pessoal construído com Next.js e Tailwind CSS.",
+            },
+            jishuu: {
+                description: "Jishuu é uma plataforma para organizar seus estudos de forma eficiente e intuitiva. Atualmente em fase de testes/demo."
             }
         }
     },
