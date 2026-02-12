@@ -31,9 +31,9 @@ export function ProjectCard({
   const isGame = title.toLowerCase().includes("flappy") || title.toLowerCase().includes("game");
 
   return (
-    <Card className="group overflow-hidden transition-all hover:shadow-lg hover:border-primary/50">
+    <Card className="group overflow-hidden transition-all hover:shadow-lg hover:border-primary/50 h-full flex flex-col">
       <CardHeader>
-        <CardTitle className="flex items-center justify-between">
+        <CardTitle className="flex items-center justify-between min-h-[2.25rem]">
           <span>{title}</span>
           <div className="flex items-center gap-3">
             {githubRepos?.map((repo) => (
@@ -69,8 +69,8 @@ export function ProjectCard({
         </CardTitle>
         <CardDescription>{description}</CardDescription>
       </CardHeader>
-      <CardContent>
-        <div className="flex flex-wrap gap-2">
+      <CardContent className="flex-grow">
+        <div className="flex flex-wrap gap-2 content-end">
           {technologies.map((tech) => (
             <Badge key={tech} variant="secondary">
               {tech}
