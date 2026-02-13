@@ -3,17 +3,18 @@
 import { ProjectCard } from "@/components/ui/project-card";
 import { projects } from "@/lib/data";
 import { useLanguage } from "@/components/language-context";
+import { ProjectTranslation } from "@/lib/dictionaries";
 
 export function AllProjects() {
     const { dictionary } = useLanguage();
 
     const translatedProjects = projects.map(project => {
         const key = project.id as keyof typeof dictionary.projects.items;
-        const dictProject = dictionary.projects.items[key];
+        const dictProject = dictionary.projects.items[key] as ProjectTranslation | undefined;
 
         return {
             ...project,
-            title: (dictProject as any)?.title || project.title,
+            title: dictProject?.title || project.title,
             description: dictProject?.description || project.description
         };
     });

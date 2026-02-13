@@ -6,6 +6,7 @@ import { ProjectCard } from "@/components/ui/project-card";
 import { ArrowRight } from "lucide-react";
 import { projects } from "@/lib/data";
 import { useLanguage } from "@/components/language-context";
+import { ProjectTranslation } from "@/lib/dictionaries";
 
 export function FeaturedProjects() {
   const { dictionary } = useLanguage();
@@ -13,11 +14,11 @@ export function FeaturedProjects() {
   const translatedProjects = projects.slice(0, 3).map(project => {
     const key = project.id as keyof typeof dictionary.projects.items;
 
-    const dictProject = dictionary.projects.items[key];
+    const dictProject = dictionary.projects.items[key] as ProjectTranslation | undefined;
 
     return {
       ...project,
-      title: (dictProject as any)?.title || project.title,
+      title: dictProject?.title || project.title,
       description: dictProject?.description || project.description
     };
   });

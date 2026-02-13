@@ -6,6 +6,7 @@ import { MapPin, Github, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { useLanguage } from "@/components/language-context";
+import { Education } from "@/lib/dictionaries";
 
 const skills = {
     Backend: ["Java", "Spring Boot", "REST APIs", "PostgreSQL", "Node.js", "Docker", "JUnit"],
@@ -65,7 +66,7 @@ export function About() {
                         <section>
                             <h3 className="text-2xl font-bold mb-6">{dictionary.about.educationTitle}</h3>
                             <div className="space-y-8">
-                                {dictionary.about.education.map((item: any, index: number) => (
+                                {dictionary.about.education.map((item: Education, index: number) => (
                                     <div key={index} className={`relative pl-6 border-l-2 ${index === 0 ? 'border-primary' : 'border-muted-foreground/30'}`}>
                                         <div className={`absolute w-3 h-3 rounded-full -left-[7px] top-2 ${index === 0 ? 'bg-primary' : 'bg-muted-foreground/30'}`} />
                                         <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-1">

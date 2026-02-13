@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Typewriter } from 'react-simple-typewriter';
 import { useLanguage } from "@/components/language-context";
-import { BinaryRain } from "@/components/binary-rain";
 
 export function Hero() {
   const { dictionary } = useLanguage();
