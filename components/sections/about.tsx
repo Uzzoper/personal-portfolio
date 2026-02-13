@@ -154,7 +154,7 @@ export function About() {
                                 <p className="text-sm text-muted-foreground mb-4">
                                     {dictionary.about.openForWorkDesc}
                                 </p>
-                                <Link href="/contact" className="text-primary hover:underline text-sm font-medium">
+                                <Link href="/#contact" className="text-primary hover:underline text-sm font-medium">
                                     {dictionary.about.getInTouch} →
                                 </Link>
                             </CardContent>
