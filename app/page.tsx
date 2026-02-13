@@ -2,7 +2,7 @@
 
 import { Hero } from "@/components/sections/hero";
 import { About } from "@/components/sections/about";
-import { AllProjects } from "@/components/sections/all-projects";
+import { Projects } from "@/components/sections/projects";
 import { Contact } from "@/components/sections/contact";
 import { BinaryRain } from "@/components/binary-rain";
 
@@ -15,7 +15,7 @@ export default function Home() {
       </div>
 
       <Hero />
-      <AllProjects />
+      <Projects />
       <About />
       <Contact />
     </div>
