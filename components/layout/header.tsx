@@ -15,9 +15,9 @@ export function Header() {
 
   const navLinks = [
     { href: "/", label: dictionary.header.home },
-    { href: "/projects", label: dictionary.header.projects },
-    { href: "/about", label: dictionary.header.about },
-    { href: "/contact", label: dictionary.header.contact },
+    { href: "/#projects", label: dictionary.header.projects },
+    { href: "/#about", label: dictionary.header.about },
+    { href: "/#contact", label: dictionary.header.contact },
   ];
 
   return (
@@ -44,7 +44,7 @@ export function Header() {
             <ModeToggle />
           </div>
           <Button asChild className="w-28">
-            <Link href="/contact">{dictionary.header.hireMe}</Link>
+            <Link href="/#contact">{dictionary.header.hireMe}</Link>
           </Button>
         </nav>
 
@@ -78,7 +78,7 @@ export function Header() {
                 <span className="text-sm text-muted-foreground">{dictionary.header.toggleTheme}</span>
               </div>
               <Button asChild className="mt-4 w-28">
-                <Link href="/contact" onClick={() => setIsOpen(false)}>{dictionary.header.hireMe}</Link>
+                <Link href="/#contact" onClick={() => setIsOpen(false)}>{dictionary.header.hireMe}</Link>
               </Button>
             </nav>
           </SheetContent>

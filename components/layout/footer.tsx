@@ -9,9 +9,9 @@ export function Footer() {
 
   const footerLinks = [
     { href: "/", label: dictionary.header.home },
-    { href: "/projects", label: dictionary.header.projects },
-    { href: "/about", label: dictionary.header.about },
-    { href: "/contact", label: dictionary.header.contact },
+    { href: "/#projects", label: dictionary.header.projects },
+    { href: "/#about", label: dictionary.header.about },
+    { href: "/#contact", label: dictionary.header.contact },
   ];
 
   const socialLinks = [
@@ -21,7 +21,7 @@ export function Footer() {
   ];
 
   return (
-    <footer className="border-t border-border/40 bg-background">
+    <footer className="border-t border-border/40 bg-background/50 backdrop-blur-sm">
       <div className="container max-w-screen-xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* About Section */}
