@@ -11,14 +11,9 @@ export function Hero() {
   const { dictionary } = useLanguage();
 
   return (
-    <section className="relative py-20 md:py-32 overflow-hidden min-h-[90vh] flex items-center">
+    <section className="relative py-20 md:py-32 overflow-hidden min-h-[calc(100vh-4rem)] flex items-center">
       {/* Background elements */}
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(34,197,94,0.08),transparent)]" />
-
-      {/* Binary Rain Effect */}
-      <div className="absolute top-0 right-0 w-1/2 h-full -z-10 opacity-40">
-        <BinaryRain className="w-full h-full" />
-      </div>
 
       <div className="container max-w-screen-xl mx-auto px-4">
         <div className="max-w-3xl space-y-8">
@@ -56,13 +51,13 @@ export function Hero() {
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4">
             <Button asChild size="lg">
-              <Link href="/projects">
+              <Link href="/#projects">
                 {dictionary.hero.viewProjects}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
             <Button asChild variant="outline" size="lg">
-              <Link href="/about">{dictionary.hero.moreAboutMe}</Link>
+              <Link href="/#about">{dictionary.hero.moreAboutMe}</Link>
             </Button>
           </div>
         </div>
