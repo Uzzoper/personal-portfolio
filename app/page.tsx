@@ -1,11 +1,23 @@
+"use client";
+
 import { Hero } from "@/components/sections/hero";
-import { FeaturedProjects } from "@/components/sections/featured-projects";
+import { About } from "@/components/sections/about";
+import { AllProjects } from "@/components/sections/all-projects";
+import { Contact } from "@/components/sections/contact";
+import { BinaryRain } from "@/components/binary-rain";
 
 export default function Home() {
   return (
-    <>
+    <div className="relative">
+      {/* Global Binary Rain Effect */}
+      <div className="fixed inset-0 -z-10 opacity-20 pointer-events-none">
+        <BinaryRain className="w-full h-full" />
+      </div>
+
       <Hero />
-      <FeaturedProjects />
-    </>
+      <AllProjects />
+      <About />
+      <Contact />
+    </div>
   );
 }

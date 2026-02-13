@@ -27,7 +27,8 @@ export const BinaryRain: React.FC<BinaryRainProps> = ({ className }) => {
         }
 
         const draw = () => {
-            ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+            const fadeColor = getComputedStyle(canvas).getPropertyValue('--rain-fade') || "rgba(0, 0, 0, 0.05)";
+            ctx.fillStyle = fadeColor;
             ctx.fillRect(0, 0, width, height);
 
             ctx.font = "15px monospace";
@@ -80,8 +81,6 @@ export const BinaryRain: React.FC<BinaryRainProps> = ({ className }) => {
                 display: "block",
                 width: "100%",
                 height: "100%",
-                maskImage: "linear-gradient(to left, black, transparent)",
-                WebkitMaskImage: "linear-gradient(to left, black, transparent)",
             }}
         />
     );
