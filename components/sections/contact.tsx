@@ -58,38 +58,39 @@ export function Contact() {
                         <CardContent className="space-y-6">
 
                             {/* Email */}
-                            <div className="flex items-start gap-4 p-4 rounded-lg border bg-card/40 backdrop-blur-sm shadow-sm">
+                            <div className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 rounded-lg border bg-card/40 backdrop-blur-sm shadow-sm">
                                 <div className="p-2 rounded-full bg-primary/10 text-primary">
                                     <Mail className="h-5 w-5" />
                                 </div>
-                                <div className="flex-1">
+                                <div className="flex-1 min-w-0">
                                     <p className="text-sm font-medium text-muted-foreground mb-1">Email</p>
-                                    <p className="font-semibold break-all">{CONTACT_EMAIL}</p>
+                                    <p className="font-semibold break-all text-sm sm:text-base">{CONTACT_EMAIL}</p>
                                 </div>
                                 <Button
                                     variant="ghost"
                                     size="icon"
                                     onClick={() => handleCopy(CONTACT_EMAIL, 'email')}
                                     title={dictionary.contact.copyEmail}
+                                    className="shrink-0"
                                 >
                                     {copiedEmail ? <Check className="h-4 w-4 text-green-500" /> : <Copy className="h-4 w-4" />}
                                 </Button>
                             </div>
 
                             {/* Phone / WhatsApp */}
-                            <div className="flex items-start gap-4 p-4 rounded-lg border bg-card/40 backdrop-blur-sm shadow-sm">
+                            <div className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 rounded-lg border bg-card/40 backdrop-blur-sm shadow-sm">
                                 <div className="p-2 rounded-full bg-primary/10 text-primary">
                                     <Phone className="h-5 w-5" />
                                 </div>
-                                <div className="flex-1">
+                                <div className="flex-1 min-w-0">
                                     <p className="text-sm font-medium text-muted-foreground mb-1">Phone</p>
-                                    <p className="font-semibold">{CONTACT_PHONE}</p>
+                                    <p className="font-semibold text-sm sm:text-base">{CONTACT_PHONE}</p>
                                     <Link
                                         href={WHATSAPP_LINK}
                                         target="_blank"
                                         className="inline-flex items-center text-sm text-green-600 hover:text-green-700 font-medium mt-1"
                                     >
-                                        <MessageSquare className="h-3 w-3 mr-1" />
+                                        <MessageSquare className="h-4 w-4 mr-1.5" />
                                         {dictionary.contact.chatWhatsApp}
                                     </Link>
                                 </div>
@@ -98,6 +99,7 @@ export function Contact() {
                                     size="icon"
                                     onClick={() => handleCopy(CONTACT_PHONE, 'phone')}
                                     title={dictionary.contact.copyPhone}
+                                    className="shrink-0"
                                 >
                                     {copiedPhone ? <Check className="h-4 w-4 text-green-500" /> : <Copy className="h-4 w-4" />}
                                 </Button>
@@ -105,13 +107,13 @@ export function Contact() {
 
                             {/* Social Links */}
                             <div className="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <Button asChild variant="outline" size="lg" className="w-full">
+                                <Button asChild variant="outline" size="default" className="w-full md:size-lg">
                                     <Link href="https://github.com/Uzzoper" target="_blank" rel="noopener noreferrer">
                                         <Github className="mr-2 h-5 w-5" />
                                         GitHub
                                     </Link>
                                 </Button>
-                                <Button asChild variant="outline" size="lg" className="w-full">
+                                <Button asChild variant="outline" size="default" className="w-full md:size-lg">
                                     <Link href="https://www.linkedin.com/in/juan-antonio-peruzzo-10a343315/" target="_blank" rel="noopener noreferrer">
                                         <Linkedin className="mr-2 h-5 w-5" />
                                         LinkedIn
