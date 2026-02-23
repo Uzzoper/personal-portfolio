@@ -2,20 +2,71 @@
 
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { MapPin, Github, Linkedin, Mail } from "lucide-react";
+import { MapPin, Github as GithubIcon, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { useLanguage } from "@/components/language-context";
 import { Education } from "@/lib/dictionaries";
+import { IconType } from "react-icons";
+import { FaJava } from "react-icons/fa";
+import { VscCode } from "react-icons/vsc";
+import {
+    SiSpring,
+    SiPostgresql,
+    SiSqlite,
+    SiNodedotjs,
+    SiDocker,
+    SiReact,
+    SiTypescript,
+    SiNextdotjs,
+    SiTailwindcss,
+    SiVuedotjs,
+    SiHtml5,
+    SiGit,
+    SiGithub,
+    SiVercel,
+    SiRailway,
+    SiRender,
+    SiLinux,
+    SiIntellijidea,
+    SiPostman,
+    SiDbeaver,
+} from "react-icons/si";
+
+const skillIcons: Record<string, IconType> = {
+    Java: FaJava,
+    "Spring Boot": SiSpring,
+    PostgreSQL: SiPostgresql,
+    SQLite: SiSqlite,
+    "Node.js": SiNodedotjs,
+    Docker: SiDocker,
+    React: SiReact,
+    TypeScript: SiTypescript,
+    "Next.js": SiNextdotjs,
+    TailwindCSS: SiTailwindcss,
+    "Vue.js": SiVuedotjs,
+    "HTML/CSS": SiHtml5,
+    Git: SiGit,
+    GitHub: SiGithub,
+    Vercel: SiVercel,
+    Railway: SiRailway,
+    Render: SiRender,
+    Linux: SiLinux,
+    Intellij: SiIntellijidea,
+    VSCode: VscCode,
+    Postman: SiPostman,
+    DBeaver: SiDbeaver,
+};
 
 const skills = {
-    Backend: ["Java", "Spring Boot", "REST APIs", "PostgreSQL", "Node.js", "Docker", "JUnit"],
-    Frontend: ["React", "TypeScript", "Next.js", "TailwindCSS", "Vue.js", "Canvas API", "HTML/CSS"],
-    "Tools & Others": ["Git", "GitHub", "Flyway", "Clean Architecture", "Agile", "Vercel", "Railway"],
+    Backend: ["Java", "Spring Boot", "PostgreSQL", "SQLite", "Node.js", "REST APIs", "JUnit"],
+    Frontend: ["React", "TypeScript", "Next.js", "TailwindCSS", "Vue.js", "HTML/CSS", "Canvas API"],
+    DevOps: ["Docker", "Linux", "Vercel", "Railway", "Render", "CI/CD"],
+    "Tools & Others": ["Git", "GitHub", "Intellij", "VSCode", "Postman", "DBeaver", "Clean Architecture", "Agile", "pgAdmin", "Opencode", "Antigravity", "Kanban",],
 };
 
 const socialLinks = [
-    { href: "https://github.com/Uzzoper", icon: Github, label: "GitHub" },
+    { href: "https://github.com/Uzzoper", icon: GithubIcon, label: "GitHub" },
     { href: "https://www.linkedin.com/in/juan-antonio-peruzzo-10a343315/", icon: Linkedin, label: "LinkedIn" },
     { href: "mailto:juanperuzzo13@gmail.com", icon: Mail, label: "Email" },
 ];
@@ -26,7 +77,6 @@ export function About() {
     return (
         <section id="about" className="py-20 md:py-32">
             <div className="container max-w-screen-xl mx-auto px-4">
-                {/* Header */}
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 mb-16">
                     <div className="max-w-2xl">
                         <h2 className="text-4xl md:text-5xl font-bold mb-6">{dictionary.about.title}</h2>
@@ -35,7 +85,6 @@ export function About() {
                         </p>
                     </div>
 
-                    {/* Profile Picture */}
                     <div className="relative h-72 w-72 md:h-80 md:w-80 lg:h-96 lg:w-96 shrink-0 mx-auto md:mx-0">
                         <Image
                             src="/juan.jpeg"
@@ -49,10 +98,8 @@ export function About() {
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-                    {/* Main Content */}
                     <div className="lg:col-span-2 space-y-12">
 
-                        {/* Who I Am */}
                         <section>
                             <h3 className="text-2xl font-bold mb-4">{dictionary.about.whoIAmTitle}</h3>
                             <div className="prose prose-neutral dark:prose-invert max-w-none space-y-4 text-muted-foreground">
@@ -62,7 +109,6 @@ export function About() {
                             </div>
                         </section>
 
-                        {/* Education Section */}
                         <section>
                             <h3 className="text-2xl font-bold mb-6">{dictionary.about.educationTitle}</h3>
                             <div className="space-y-8">
@@ -88,22 +134,25 @@ export function About() {
                             </div>
                         </section>
 
-                        {/* Skills Section */}
                         <section>
                             <h3 className="text-2xl font-bold mb-6">{dictionary.about.skillsTitle}</h3>
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 {Object.entries(skills).map(([category, items]) => (
-                                    <Card key={category}>
+                                    <Card key={category} className="h-full">
                                         <CardHeader className="pb-3">
-                                            <CardTitle className="text-lg">{category}</CardTitle>
+                                            <CardTitle className="text-xl">{category}</CardTitle>
                                         </CardHeader>
                                         <CardContent>
-                                            <div className="flex flex-wrap gap-2">
-                                                {items.map((skill) => (
-                                                    <Badge key={skill} variant="secondary">
-                                                        {skill}
-                                                    </Badge>
-                                                ))}
+                                            <div className="flex flex-wrap gap-2.5">
+                                                {items.map((skill) => {
+                                                    const Icon = skillIcons[skill];
+                                                    return (
+                                                        <Badge key={skill} variant="secondary" className="gap-1.5 text-sm px-3 py-1.5">
+                                                            {Icon && <Icon className="h-4 w-4" />}
+                                                            {skill}
+                                                        </Badge>
+                                                    );
+                                                })}
                                             </div>
                                         </CardContent>
                                     </Card>
@@ -112,7 +161,6 @@ export function About() {
                         </section>
                     </div>
 
-                    {/* Sidebar */}
                     <aside className="space-y-6">
                         <Card>
                             <CardHeader>
