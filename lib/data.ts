@@ -9,6 +9,35 @@ export const projects = [
             { label: "Backend", url: "https://github.com/Uzzoper/flappynaruu-backend" },
         ],
         demoUrl: "https://flappynaruu.vercel.app/",
+        imageUrl: "/flappynaruu.png",
+    },
+    {
+        id: "thermometer",
+        title: "Thermometer of Ponta Grossa",
+        description: "A weather website showing real-time temperature for Ponta Grossa.",
+        technologies: ["JavaScript", "Weather API", "HTML", "CSS", "Vercel"],
+        githubRepos: [
+            { label: "Repository", url: "https://github.com/Uzzoper/termometro-pg" },
+        ],
+        demoUrl: "https://otermometrodepg.vercel.app",
+        imageUrl: "/thermometer.png",
+    },
+    {
+        id: "jishuu",
+        title: "Jishuu",
+        description: "Jishuu is a platform to organize your studies efficiently and intuitively. Currently in demo/testing phase.",
+        technologies: [
+            "Next.js",
+            "React",
+            "TypeScript",
+            "Tailwind CSS",
+            "shadcn/ui",
+            "Radix UI",
+            "Lucide React"
+        ],
+        githubRepos: [],
+        demoUrl: "https://jishuu.vercel.app/",
+        imageUrl: "/jishuu.png",
     },
     {
         id: "eventclean",
@@ -29,16 +58,6 @@ export const projects = [
         ],
     },
     {
-        id: "thermometer",
-        title: "Thermometer of Ponta Grossa",
-        description: "A weather website showing real-time temperature for Ponta Grossa.",
-        technologies: ["JavaScript", "Weather API", "HTML", "CSS", "Vercel"],
-        githubRepos: [
-            { label: "Repository", url: "https://github.com/Uzzoper/termometro-pg" },
-        ],
-        demoUrl: "https://otermometrodepg.vercel.app",
-    },
-    {
         id: "portfolio",
         title: "Portfolio",
         description: "My personal portfolio built with Next.js and Tailwind CSS.",
@@ -46,21 +65,5 @@ export const projects = [
         githubRepos: [
             { label: "Repository", url: "https://github.com/Uzzoper/personal-portfolio" },
         ],
-    },
-    {
-        id: "jishuu",
-        title: "Jishuu",
-        description: "Jishuu is a platform to organize your studies efficiently and intuitively. Currently in demo/testing phase.",
-        technologies: [
-            "Next.js",
-            "React",
-            "TypeScript",
-            "Tailwind CSS",
-            "shadcn/ui",
-            "Radix UI",
-            "Lucide React"
-        ],
-        githubRepos: [],
-        demoUrl: "https://jishuu.vercel.app/",
     },
 ];

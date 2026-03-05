@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github, Gamepad2 } from "lucide-react";
@@ -25,13 +26,24 @@ export function ProjectCard({
   description,
   technologies,
   demoUrl,
-  githubRepos
+  githubRepos,
+  imageUrl
 }: ProjectCardProps) {
   const { dictionary } = useLanguage();
   const isGame = title.toLowerCase().includes("flappy") || title.toLowerCase().includes("game");
 
   return (
     <Card className="group overflow-hidden transition-all hover:shadow-lg hover:border-primary/50 h-full flex flex-col">
+      {imageUrl && (
+        <div className="relative w-full h-48 overflow-hidden">
+          <Image
+            src={imageUrl}
+            alt={title}
+            fill
+            className="object-cover transition-transform group-hover:scale-105"
+          />
+        </div>
+      )}
       <CardHeader>
         <CardTitle className="flex items-center justify-between min-h-[2.25rem]">
           <span>{title}</span>
