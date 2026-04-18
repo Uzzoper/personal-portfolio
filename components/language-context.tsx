@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useState, useEffect } from "react";
 import { dictionaries, Locale, Dictionary } from "@/lib/dictionaries";
 
 interface LanguageContextType {
@@ -9,22 +9,30 @@ interface LanguageContextType {
     setLocale: (locale: Locale) => void;
 }
 
+const DEFAULT_LOCALE: Locale = "en";
+
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
+function getBrowserLocale(): Locale {
+    const saved = localStorage.getItem("locale") as Locale;
+    if (saved === "en" || saved === "pt") {
+        return saved;
+    }
+    return navigator.language.startsWith("pt") ? "pt" : "en";
+}
+
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-    const [locale, setLocaleState] = useState<Locale>("en");
-    const [dictionary, setDictionary] = useState<Dictionary>(dictionaries.en);
-    const [isHydrated, setIsHydrated] = useState(false);
+    // Always start with the default locale so server and client HTML match
+    const [locale, setLocaleState] = useState<Locale>(DEFAULT_LOCALE);
+    const [dictionary, setDictionary] = useState<Dictionary>(dictionaries[DEFAULT_LOCALE]);
 
+    // After hydration, sync to the user's real locale
     useEffect(() => {
-        const savedLocale = localStorage.getItem("locale") as Locale;
-        const browserLocale = navigator.language.startsWith("pt") ? "pt" : "en";
-        const initialLocale = savedLocale || browserLocale;
-
-        // eslint-disable-next-line react-hooks/set-state-in-effect
-        setLocaleState(initialLocale);
-        setDictionary(dictionaries[initialLocale]);
-        setIsHydrated(true);
+        const browserLocale = getBrowserLocale();
+        if (browserLocale !== DEFAULT_LOCALE) {
+            setLocaleState(browserLocale);
+            setDictionary(dictionaries[browserLocale]);
+        }
     }, []);
 
     const setLocale = (newLocale: Locale) => {
@@ -32,10 +40,6 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
         setDictionary(dictionaries[newLocale]);
         localStorage.setItem("locale", newLocale);
     };
-
-    if (!isHydrated) {
-        return null;
-    }
 
     return (
         <LanguageContext.Provider value={{ locale, dictionary, setLocale }}>

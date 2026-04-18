@@ -59,6 +59,9 @@ export const pt = {
         subtitle: "Uma lista abrangente dos meus projetos de engenharia de software, desde APIs de backend até aplicações web full-stack.",
         viewLive: "Ir para o site",
         playGame: "Jogar Agora",
+        repository: "Repositório",
+        frontend: "Frontend",
+        backend: "Backend",
         items: {
             flappynaruu: {
                 description: "Um jogo divertido no estilo Flappy Bird construído do zero com tecnologias web modernas.",
@@ -79,6 +82,10 @@ export const pt = {
             },
             jishuu: {
                 description: "Jishuu é uma plataforma para organizar seus estudos de forma eficiente e intuitiva. Atualmente em fase de testes/demo."
+            },
+            asciiconv: {
+                title: "Conversor ASCII",
+                description: "Aplicação web que converte imagens em arte ASCII diretamente no navegador. Grátis, rápido e privado, sem uploads para nenhum servidor.",
             }
         }
     },

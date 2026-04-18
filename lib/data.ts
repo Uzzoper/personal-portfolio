@@ -1,28 +1,5 @@
 export const projects = [
     {
-        id: "flappynaruu",
-        title: "Flappy Naruu",
-        description: "A fun Flappy Bird-style game built from zero with modern web technologies.",
-        technologies: ["React", "TypeScript", "Canvas API", "Java", "Spring", "Postgres", "Docker", "JUnit", "Vercel", "Railway"],
-        githubRepos: [
-            { label: "Frontend", url: "https://github.com/Uzzoper/flappynaruu-frontend" },
-            { label: "Backend", url: "https://github.com/Uzzoper/flappynaruu-backend" },
-        ],
-        demoUrl: "https://flappynaruu.vercel.app/",
-        imageUrl: "/flappynaruu.png",
-    },
-    {
-        id: "thermometer",
-        title: "Thermometer of Ponta Grossa",
-        description: "A weather website showing real-time temperature for Ponta Grossa.",
-        technologies: ["JavaScript", "Weather API", "HTML", "CSS", "Vercel"],
-        githubRepos: [
-            { label: "Repository", url: "https://github.com/Uzzoper/termometro-pg" },
-        ],
-        demoUrl: "https://otermometrodepg.vercel.app",
-        imageUrl: "/thermometer.png",
-    },
-    {
         id: "jishuu",
         title: "Jishuu",
         description: "Jishuu is a platform to organize your studies efficiently and intuitively. Currently in demo/testing phase.",
@@ -38,6 +15,40 @@ export const projects = [
         githubRepos: [],
         demoUrl: "https://jishuu.vercel.app/",
         imageUrl: "/jishuu.png",
+    },
+    {
+        id: "flappynaruu",
+        title: "Flappy Naruu",
+        description: "A fun Flappy Bird-style game built from zero with modern web technologies.",
+        technologies: ["React", "TypeScript", "Canvas API", "Java", "Spring", "Postgres", "Docker", "JUnit", "Vercel", "Railway", "Render"],
+        githubRepos: [
+            { label: "Frontend", url: "https://github.com/Uzzoper/flappynaruu-frontend" },
+            { label: "Backend", url: "https://github.com/Uzzoper/flappynaruu-backend" },
+        ],
+        demoUrl: "https://flappynaruu.vercel.app/",
+        imageUrl: "/flappynaruu.png",
+    },
+    {
+        id: "asciiconv",
+        title: "ASCII Converter",
+        description: "Web application that converts images to ASCII art directly in your browser. Free, fast, and private, with no uploads to any server.",
+        technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Canvas API", "Vercel"],
+        githubRepos: [
+            { label: "Repository", url: "https://github.com/Uzzoper/ascii-converter" },
+        ],
+        demoUrl: "https://asciiconv.vercel.app/",
+        imageUrl: "/ascii-converter.png",
+    },
+    {
+        id: "thermometer",
+        title: "Thermometer of Ponta Grossa",
+        description: "A weather website showing real-time temperature for Ponta Grossa.",
+        technologies: ["JavaScript", "Weather API", "HTML", "CSS", "Vercel"],
+        githubRepos: [
+            { label: "Repository", url: "https://github.com/Uzzoper/termometro-pg" },
+        ],
+        demoUrl: "https://otermometrodepg.vercel.app",
+        imageUrl: "/thermometer.png",
     },
     {
         id: "eventclean",
@@ -65,5 +76,6 @@ export const projects = [
         githubRepos: [
             { label: "Repository", url: "https://github.com/Uzzoper/personal-portfolio" },
         ],
+        imageUrl: "/portfolio.png",
     },
 ];
