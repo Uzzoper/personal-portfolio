@@ -5,7 +5,7 @@ export const pt = {
         about: "Sobre",
         contact: "Contato",
         hireMe: "Contrate-me",
-        toggleTheme: "Alternar Tema",
+        toggleTheme: "Alternar tema",
     },
     home: {
         featuredTitle: "Projetos em Destaque",

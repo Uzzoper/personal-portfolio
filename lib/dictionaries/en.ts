@@ -5,7 +5,7 @@ export const en = {
         about: "About",
         contact: "Contact",
         hireMe: "Hire Me",
-        toggleTheme: "Toggle Theme",
+        toggleTheme: "Toggle theme",
     },
     home: {
         featuredTitle: "Featured Projects",
