@@ -8,7 +8,7 @@ import Image from "next/image";
 import { useLanguage } from "@/components/language-context";
 import { Education } from "@/lib/dictionaries";
 import { IconType } from "react-icons";
-import { FaJava } from "react-icons/fa";
+import { FaJava, FaPython, FaBrain, FaBolt, FaCode, FaExternalLinkAlt } from "react-icons/fa";
 import { VscCode } from "react-icons/vsc";
 import {
     SiSpring,
@@ -31,6 +31,8 @@ import {
     SiIntellijidea,
     SiPostman,
     SiDbeaver,
+    SiAnthropic,
+    SiLangchain,
 } from "react-icons/si";
 
 const skillIcons: Record<string, IconType> = {
@@ -56,13 +58,21 @@ const skillIcons: Record<string, IconType> = {
     VSCode: VscCode,
     Postman: SiPostman,
     DBeaver: SiDbeaver,
+    Python: FaPython,
+    "LLMs & RAG": FaBrain,
+    "OpenCode": FaCode,
+    "Claude Code": SiAnthropic,
+    Ollama: FaBolt,
+    "OpenRouter API": FaExternalLinkAlt,
+    "AI Agents": SiLangchain,
 };
 
 const skills = {
     Backend: ["Java", "Spring Boot", "PostgreSQL", "SQLite", "Node.js", "REST APIs", "JUnit"],
     Frontend: ["React", "TypeScript", "Next.js", "TailwindCSS", "Vue.js", "HTML/CSS", "Canvas API"],
     DevOps: ["Docker", "Linux", "Vercel", "Railway", "Render", "CI/CD"],
-    "Tools & Others": ["Git", "GitHub", "Intellij", "VSCode", "Postman", "DBeaver", "Clean Architecture", "Agile", "pgAdmin", "Opencode", "Antigravity", "Kanban",],
+    "AI/ML": ["Python", "LLMs & RAG", "OpenCode", "Claude Code", "Ollama", "OpenRouter API", "AI Agents"],
+    "Tools & Others": ["Git", "GitHub", "Intellij", "VSCode", "Postman", "DBeaver", "Clean Architecture", "Agile", "pgAdmin", "Antigravity", "Kanban"],
 };
 
 const socialLinks = [
