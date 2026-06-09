@@ -51,7 +51,7 @@ export function ProjectCard({
   imageUrl
 }: ProjectCardProps) {
   const { dictionary } = useLanguage();
-  const isGame = title.toLowerCase().includes("flappy") || title.toLowerCase().includes("game");
+  const isGame = title.toLowerCase().includes("flappy") || title.toLowerCase().includes("game") || title.toLowerCase().includes("vibecraft");
   const theme = getProjectTheme(technologies);
   const ThemeIcon = theme.icon;
 

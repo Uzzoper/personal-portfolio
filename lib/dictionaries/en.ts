@@ -86,6 +86,14 @@ export const en = {
             asciiconv: {
                 title: "ASCII Converter",
                 description: "Web application that converts images to ASCII art directly in your browser. Free, fast, and private — no uploads to any server.",
+            },
+            vibecraft: {
+                title: "Vibecraft",
+                description: "A 3D voxel game in the browser with procedural terrain, building, and exploration, inspired by Minecraft and built with Three.js.",
+            },
+            jobhunter: {
+                title: "Job Hunter",
+                description: "A Java + Spring Boot application that automates junior developer job search, analyzes listings with AI, and generates personalized application emails.",
             }
         }
     },

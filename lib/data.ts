@@ -40,6 +40,17 @@ export const projects = [
         imageUrl: "/ascii-converter.png",
     },
     {
+        id: "vibecraft",
+        title: "Vibecraft",
+        description: "A 3D voxel game in the browser with procedural terrain, building, and exploration — inspired by Minecraft, built with Three.js.",
+        technologies: ["TypeScript", "Three.js", "Vite"],
+        githubRepos: [
+            { label: "Repository", url: "https://github.com/Uzzoper/vibecraft" },
+        ],
+        demoUrl: "https://vibecraftland.vercel.app/",
+        imageUrl: "/vibecraft.png",
+    },
+    {
         id: "thermometer",
         title: "Thermometer of Ponta Grossa",
         description: "A weather website showing real-time temperature for Ponta Grossa.",
@@ -49,6 +60,15 @@ export const projects = [
         ],
         demoUrl: "https://otermometrodepg.vercel.app",
         imageUrl: "/thermometer.png",
+    },
+    {
+        id: "jobhunter",
+        title: "Job Hunter",
+        description: "A Java + Spring Boot application that automates junior developer job search, analyzes listings with AI, and generates personalized application emails.",
+        technologies: ["Java 21", "Spring Boot", "PostgreSQL", "Docker", "Flyway", "Clean Architecture", "JWT", "OpenRouter AI"],
+        githubRepos: [
+            { label: "Repository", url: "https://github.com/Uzzoper/job-hunter" },
+        ],
     },
     {
         id: "eventclean",
