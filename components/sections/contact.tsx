@@ -13,7 +13,7 @@ export function Contact() {
     const [copiedEmail, setCopiedEmail] = useState(false);
     const [copiedPhone, setCopiedPhone] = useState(false);
 
-    const CONTACT_EMAIL = "juanperuzzo13@gmail.com";
+    const CONTACT_EMAIL = "juanperuzzo.dev@gmail.com";
     const CONTACT_PHONE = "+55 (42) 99833-1363";
     const WHATSAPP_LINK = "https://wa.me/5542998331363";
 

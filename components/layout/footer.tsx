@@ -17,7 +17,7 @@ export function Footer() {
   const socialLinks = [
     { href: "https://github.com/Uzzoper", icon: Github, label: "GitHub" },
     { href: "https://www.linkedin.com/in/juan-antonio-peruzzo-10a343315/", icon: Linkedin, label: "LinkedIn" },
-    { href: "mailto:juanperuzzo13@gmail.com", icon: Mail, label: "Email" },
+    { href: "mailto:juanperuzzo.dev@gmail.com", icon: Mail, label: "Email" },
   ];
 
   return (
