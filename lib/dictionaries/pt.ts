@@ -20,8 +20,6 @@ export const pt = {
             "aplicações web que transformam ideias em produtos.",
             "software moderno para startups e empresas.",
             "produtos digitais do MVP à escala.",
-            "software para quem quer crescer.",
-            "aplicações que pessoas gostam de usar.",
             "produtos digitais com foco em qualidade e performance.",
             "soluções digitais para empresas e startups.",
             "produtos digitais que resolvem problemas reais.",

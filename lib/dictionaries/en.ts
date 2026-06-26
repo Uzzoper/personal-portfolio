@@ -20,8 +20,6 @@ export const en = {
             "web applications that turn ideas into products.",
             "modern software for startups and businesses.",
             "digital products from MVP to scale.",
-            "software for those who want to grow.",
-            "applications people love to use.",
             "digital products with focus on quality and performance.",
             "digital solutions for businesses and startups.",
             "digital products that solve real problems.",
