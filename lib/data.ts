@@ -1,5 +1,14 @@
 export const projects = [
     {
+        id: "lovlink",
+        title: "LovLink",
+        description: "A website for couples featuring photos, a real-time counter, and music. The perfect digital gift.",
+        technologies: ["Next.js", "Mercado Pago"],
+        githubRepos: [],
+        demoUrl: "https://lovlink.com.br",
+        imageUrl: "/lovlink.png",
+    },
+    {
         id: "jishuu",
         title: "Jishuu",
         description: "Jishuu is a platform to organize your studies efficiently and intuitively. Currently in demo/testing phase.",

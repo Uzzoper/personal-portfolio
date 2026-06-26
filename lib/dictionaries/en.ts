@@ -63,6 +63,9 @@ export const en = {
         frontend: "Frontend",
         backend: "Backend",
         items: {
+            lovlink: {
+                description: "A website for couples featuring photos, a real-time counter, and music. The perfect digital gift.",
+            },
             flappynaruu: {
                 description: "A fun Flappy Bird-style game built from zero with modern web technologies.",
             },

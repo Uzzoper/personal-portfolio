@@ -63,6 +63,9 @@ export const pt = {
         frontend: "Frontend",
         backend: "Backend",
         items: {
+            lovlink: {
+                description: "Site para casais com fotos, contador de tempo real e música. O presente digital perfeito.",
+            },
             flappynaruu: {
                 description: "Um jogo divertido no estilo Flappy Bird construído do zero com tecnologias web modernas.",
             },
