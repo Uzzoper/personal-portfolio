@@ -70,7 +70,7 @@ export const pt = {
         backend: "Backend",
         items: {
             lovlink: {
-                description: "SaaS para casais. Crie seu próprio site personalizado com contador de tempo de relacionamento, fotos, música e uma mensagem especial. O presente digital perfeito.",
+                description: "SaaS para casais. Crie seu próprio site personalizado com contador, fotos, música e mensagem especial.",
             },
             flappynaruu: {
                 description: "Um jogo divertido no estilo Flappy Bird construído do zero com tecnologias web modernas.",

@@ -70,7 +70,7 @@ export const en = {
         backend: "Backend",
         items: {
             lovlink: {
-                description: "SaaS for couples. Create your own personalized website with a relationship time counter, photos, music, and a special message. The perfect digital gift.",
+                description: "SaaS for couples. Create your own personalized website with a counter, photos, music, and a special message.",
             },
             flappynaruu: {
                 description: "A fun Flappy Bird-style game built from zero with modern web technologies.",
