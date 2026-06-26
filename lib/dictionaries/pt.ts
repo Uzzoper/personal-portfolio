@@ -25,7 +25,7 @@ export const pt = {
             "produtos digitais que resolvem problemas reais.",
             "software. Lançando produtos. Resolvendo problemas.",
         ],
-        subtitle: "Olá! Sou Juan Peruzzo. Desenvolvedor de Software focado em transformar problemas complexos em soluções digitais de alta performance, utilizando arquiteturas limpas e design centrado no usuário.",
+        subtitle: "Olá! Sou Juan Peruzzo. Desenvolvedor de Software e Indie Hacker. Construo aplicações web modernas, SaaS e produtos digitais com foco em performance, arquitetura limpa e excelente experiência do usuário. Atualmente estou disponível para projetos freelance e oportunidades como desenvolvedor.",
         viewProjects: "Ver meus projetos",
         moreAboutMe: "Mais sobre mim",
     },

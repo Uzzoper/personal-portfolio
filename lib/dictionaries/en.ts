@@ -25,7 +25,7 @@ export const en = {
             "digital products that solve real problems.",
             "software. Launching products. Solving problems.",
         ],
-        subtitle: "Hey there! I'm Juan Peruzzo. As a tech enthusiast and software developer, I build modern digital experiences centered around performance, clean code, and user-centric design.",
+        subtitle: "Hey there! I'm Juan Peruzzo. Software Developer and Indie Hacker. I build modern web applications, SaaS, and digital products with a focus on performance, clean architecture, and excellent user experience. Currently available for freelance projects and developer opportunities.",
         viewProjects: "View my projects",
         moreAboutMe: "More about me",
     },
