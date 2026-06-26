@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import { Typewriter } from 'react-simple-typewriter';
+import { HighlightingTypewriter } from "@/components/ui/highlighting-typewriter";
 import { useLanguage } from "@/components/language-context";
 
 export function Hero() {
@@ -28,16 +28,17 @@ export function Hero() {
           {/* Headline */}
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight min-h-[280px] md:min-h-[340px]">
             {dictionary.hero.headline}{' '}
-            <span className="text-primary inline-block">
-              <Typewriter
+            <span className="inline-block">
+              <HighlightingTypewriter
                 key={dictionary.hero.typewriter[0]}
                 words={dictionary.hero.typewriter}
-                loop={0}
-                cursor
-                cursorStyle='_'
                 typeSpeed={70}
                 deleteSpeed={50}
                 delaySpeed={2000}
+                cursor
+                cursorStyle="_"
+                highlightWord="software"
+                highlightClass="text-green-500"
               />
             </span>
           </h1>
