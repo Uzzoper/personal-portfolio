@@ -31,7 +31,7 @@ export const pt = {
     },
     about: {
         title: "Sobre Mim",
-        intro: "Olá! Eu sou Juan Peruzzo, um desenvolvedor de software apaixonado por construir experiências digitais modernas.",
+        intro: "Gosto de resolver problemas complexos e construir todo tipo de software. O que mais me fascina na Engenharia de Software é que, se algo pode ser imaginado, também pode ser construído.",
         whoIAmTitle: "Quem Sou Eu",
         whoIAmContent: [
             "Sou um entusiasta de tecnologia e desenvolvedor de software focado em criar aplicações limpas, eficientes e centradas no usuário. Minha jornada começou na Engenharia Elétrica na UTFPR (2020-2024), onde construí uma base analítica sólida. No entanto, descobri minha verdadeira vocação na Engenharia de Software: o incrível poder de construir virtualmente qualquer coisa do zero.",

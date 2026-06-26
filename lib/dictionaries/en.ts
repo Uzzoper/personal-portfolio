@@ -31,7 +31,7 @@ export const en = {
     },
     about: {
         title: "About Me",
-        intro: "Hey there! I'm Juan Peruzzo, a software developer passionate about building modern digital experiences.",
+        intro: "I enjoy solving complex problems and building all kinds of software. What fascinates me most about Software Engineering is that if something can be imagined, it can also be built.",
         whoIAmTitle: "Who I Am",
         whoIAmContent: [
             "I'm a tech enthusiast and software developer focused on creating clean, efficient, and user-centric applications. My journey began in Electrical Engineering at UTFPR (2020-2024), where I built a strong analytical foundation. However, I discovered my true calling in Software Engineering: the incredible power to build virtually anything from scratch.",
