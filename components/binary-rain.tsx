@@ -6,6 +6,8 @@ interface BinaryRainProps {
     className?: string;
 }
 
+const COLORS = ["#22c55e", "#4ade80", "#16a34a", "#86efac"];
+
 export const BinaryRain: React.FC<BinaryRainProps> = ({ className }) => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -26,8 +28,15 @@ export const BinaryRain: React.FC<BinaryRainProps> = ({ className }) => {
             drops[i] = Math.random() * -100;
         }
 
+        // Cache --rain-fade once on mount instead of reading every frame
+        const fadeColor =
+            getComputedStyle(canvas).getPropertyValue("--rain-fade") ||
+            "rgba(0, 0, 0, 0.05)";
+
+        let animationFrameId: number;
+        let isAnimating = true;
+
         const draw = () => {
-            const fadeColor = getComputedStyle(canvas).getPropertyValue('--rain-fade') || "rgba(0, 0, 0, 0.05)";
             ctx.fillStyle = fadeColor;
             ctx.fillRect(0, 0, width, height);
 
@@ -35,9 +44,7 @@ export const BinaryRain: React.FC<BinaryRainProps> = ({ className }) => {
 
             for (let i = 0; i < drops.length; i++) {
                 const text = Math.random() > 0.5 ? "1" : "0";
-
-                const colors = ["#22c55e", "#4ade80", "#16a34a", "#86efac"];
-                ctx.fillStyle = colors[Math.floor(Math.random() * colors.length)];
+                ctx.fillStyle = COLORS[Math.floor(Math.random() * COLORS.length)];
 
                 const x = i * 20;
                 const y = drops[i] * 20;
@@ -52,13 +59,26 @@ export const BinaryRain: React.FC<BinaryRainProps> = ({ className }) => {
             }
         };
 
-        let animationFrameId: number;
         const animate = () => {
+            if (!isAnimating) return;
             draw();
             animationFrameId = requestAnimationFrame(animate);
         };
 
         animate();
+
+        // Pause animation when tab is hidden, resume when visible
+        const handleVisibilityChange = () => {
+            if (document.hidden) {
+                isAnimating = false;
+                cancelAnimationFrame(animationFrameId);
+            } else {
+                isAnimating = true;
+                animationFrameId = requestAnimationFrame(animate);
+            }
+        };
+
+        document.addEventListener("visibilitychange", handleVisibilityChange);
 
         const handleResize = () => {
             width = canvas.width = canvas.offsetWidth;
@@ -68,7 +88,9 @@ export const BinaryRain: React.FC<BinaryRainProps> = ({ className }) => {
         window.addEventListener("resize", handleResize);
 
         return () => {
+            isAnimating = false;
             cancelAnimationFrame(animationFrameId);
+            document.removeEventListener("visibilitychange", handleVisibilityChange);
             window.removeEventListener("resize", handleResize);
         };
     }, []);
