@@ -45,18 +45,6 @@ export function Hero() {
         animate="show"
       >
         <div className="max-w-3xl space-y-8">
-          {/* Badge */}
-          <motion.div
-            variants={itemVariants}
-            className="inline-flex items-center gap-2 rounded-full border border-border/40 bg-muted/50 px-4 py-1.5 text-sm"
-          >
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
-            </span>
-            <span className="text-muted-foreground">{dictionary.hero.openForWork}</span>
-          </motion.div>
-
           {/* Headline */}
           <motion.h1
             variants={itemVariants}
