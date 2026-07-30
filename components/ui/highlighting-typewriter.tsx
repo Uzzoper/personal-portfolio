@@ -33,7 +33,7 @@ export function HighlightingTypewriter({
 
   const currentWord = words[wordIndex] || "";
 
-  // Cursor blink effect
+  // Cursor blink effect — keep it in DOM to prevent layout shift
   useEffect(() => {
     if (!cursor) return;
     const blinkInterval = setInterval(() => {
@@ -41,6 +41,8 @@ export function HighlightingTypewriter({
     }, 530);
     return () => clearInterval(blinkInterval);
   }, [cursor]);
+
+  // Keep text width stable — cursor is always rendered, just toggles opacity
 
   useEffect(() => {
     let timeout: NodeJS.Timeout;
@@ -113,7 +115,7 @@ export function HighlightingTypewriter({
   return (
     <span>
       {renderHighlightedText()}
-      {cursor && showCursor && <span className="animate-pulse">{cursorStyle}</span>}
+      {cursor && <span className={showCursor ? "opacity-100" : "opacity-0"}>{cursorStyle}</span>}
     </span>
   );
 }
