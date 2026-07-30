@@ -7,20 +7,6 @@ import { useLanguage } from "@/components/language-context";
 import { ProjectTranslation } from "@/lib/dictionaries";
 import { Reveal } from "@/components/ui/reveal";
 
-const containerVariants = {
-  hidden: {},
-  show: {
-    transition: {
-      staggerChildren: 0.12,
-    },
-  },
-};
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 40 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" as const } },
-};
-
 export function Projects() {
   const { dictionary } = useLanguage();
 
@@ -51,19 +37,19 @@ export function Projects() {
           </div>
         </Reveal>
 
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-100px" }}
-        >
-          {translatedProjects.map((project) => (
-            <motion.div key={project.title} variants={cardVariants}>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {translatedProjects.map((project, index) => (
+            <motion.div
+              key={project.title}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: index * 0.08, ease: "easeOut" }}
+            >
               <ProjectCard {...project} />
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
