@@ -48,22 +48,20 @@ export function Hero() {
           {/* Headline */}
           <motion.h1
             variants={itemVariants}
-            className="text-4xl md:text-6xl font-bold tracking-tight min-h-[280px] md:min-h-[340px]"
+            className="text-4xl md:text-6xl font-bold tracking-tight min-h-[200px] md:min-h-[240px]"
           >
             {dictionary.hero.headline}{" "}
-            <span className="inline-block">
-              <HighlightingTypewriter
-                key={dictionary.hero.typewriter[0]}
-                words={dictionary.hero.typewriter}
-                typeSpeed={70}
-                deleteSpeed={50}
-                delaySpeed={2000}
-                cursor
-                cursorStyle="_"
-                highlightWord="software"
-                highlightClass="text-green-500"
-              />
-            </span>
+            <HighlightingTypewriter
+              key={dictionary.hero.typewriter[0]}
+              words={dictionary.hero.typewriter}
+              typeSpeed={70}
+              deleteSpeed={50}
+              delaySpeed={2000}
+              cursor
+              cursorStyle="_"
+              highlightWord="software"
+              highlightClass="text-green-500"
+            />
           </motion.h1>
 
           {/* Subtitle */}
