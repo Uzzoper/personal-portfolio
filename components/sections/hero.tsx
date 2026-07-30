@@ -1,33 +1,68 @@
 "use client";
 
+import { motion, useScroll, useTransform } from "motion/react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { HighlightingTypewriter } from "@/components/ui/highlighting-typewriter";
 import { useLanguage } from "@/components/language-context";
 
+const containerVariants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.3,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" as const } },
+};
+
 export function Hero() {
   const { dictionary } = useLanguage();
+  const { scrollY } = useScroll();
+  const contentY = useTransform(scrollY, [0, 500], [0, -15]);
+  const bgY = useTransform(scrollY, [0, 500], [0, 10]);
 
   return (
     <section className="relative py-20 md:py-32 overflow-hidden min-h-[calc(100vh-4rem)] flex items-center">
-      {/* Background elements */}
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(34,197,94,0.08),transparent)]" />
+      {/* Background gradient com parallax lento */}
+      <motion.div
+        className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(34,197,94,0.08),transparent)]"
+        style={{ y: bgY }}
+      />
 
-      <div className="container max-w-screen-xl mx-auto px-4">
+      {/* Conteúdo com parallax suave */}
+      <motion.div
+        className="container max-w-screen-xl mx-auto px-4"
+        style={{ y: contentY }}
+        variants={containerVariants}
+        initial="hidden"
+        animate="show"
+      >
         <div className="max-w-3xl space-y-8">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 rounded-full border border-border/40 bg-muted/50 px-4 py-1.5 text-sm">
+          <motion.div
+            variants={itemVariants}
+            className="inline-flex items-center gap-2 rounded-full border border-border/40 bg-muted/50 px-4 py-1.5 text-sm"
+          >
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
             </span>
             <span className="text-muted-foreground">{dictionary.hero.openForWork}</span>
-          </div>
+          </motion.div>
 
           {/* Headline */}
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tight min-h-[280px] md:min-h-[340px]">
-            {dictionary.hero.headline}{' '}
+          <motion.h1
+            variants={itemVariants}
+            className="text-4xl md:text-6xl font-bold tracking-tight min-h-[280px] md:min-h-[340px]"
+          >
+            {dictionary.hero.headline}{" "}
             <span className="inline-block">
               <HighlightingTypewriter
                 key={dictionary.hero.typewriter[0]}
@@ -41,15 +76,18 @@ export function Hero() {
                 highlightClass="text-green-500"
               />
             </span>
-          </h1>
+          </motion.h1>
 
           {/* Subtitle */}
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl">
+          <motion.p
+            variants={itemVariants}
+            className="text-lg md:text-xl text-muted-foreground max-w-2xl"
+          >
             {dictionary.hero.subtitle}
-          </p>
+          </motion.p>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4">
+          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4">
             <Button asChild size="lg">
               <Link href="/#projects">
                 {dictionary.hero.viewProjects}
@@ -59,9 +97,9 @@ export function Hero() {
             <Button asChild variant="outline" size="lg">
               <Link href="/#about">{dictionary.hero.moreAboutMe}</Link>
             </Button>
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
