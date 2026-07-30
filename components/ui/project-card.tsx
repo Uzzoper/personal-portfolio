@@ -67,18 +67,21 @@ export function ProjectCard({
     >
       <Card className="group overflow-hidden transition-colors duration-300 hover:border-primary/50 h-full flex flex-col">
         {imageUrl ? (
-          <div className="relative w-full h-48 overflow-hidden">
+          <div className="relative w-full h-56 overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-muted/25 to-muted/10" />
             <Image
               src={imageUrl}
               alt={title}
               fill
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              sizes="(max-width: 768px) 90vw, (max-width: 1024px) 45vw, 33vw"
+              quality={85}
+              className="object-contain transition-transform duration-500 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-card/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </div>
         ) : (
           <div
-            className={`relative w-full h-48 overflow-hidden bg-gradient-to-br ${theme.gradient} ${theme.darkGradient}`}
+            className={`relative w-full h-56 overflow-hidden bg-gradient-to-br ${theme.gradient} ${theme.darkGradient}`}
             style={{ backgroundImage: theme.pattern }}
           >
             <div className="absolute inset-0 flex items-center justify-center">
