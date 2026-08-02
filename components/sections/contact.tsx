@@ -22,6 +22,7 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { useLanguage } from "@/components/language-context";
 import { Reveal } from "@/components/ui/reveal";
+import { TiltCard } from "@/components/ui/tilt-card";
 
 export function Contact() {
   const { dictionary } = useLanguage();
@@ -66,14 +67,15 @@ export function Contact() {
 
         <div className="max-w-2xl mx-auto space-y-8">
           <Reveal delay={0.1}>
-            <Card>
-              <CardHeader>
-                <CardTitle>{dictionary.contact.infoTitle}</CardTitle>
-                <CardDescription>
-                  {dictionary.contact.infoDesc}
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-6">
+            <TiltCard>
+              <Card>
+                <CardHeader>
+                  <CardTitle>{dictionary.contact.infoTitle}</CardTitle>
+                  <CardDescription>
+                    {dictionary.contact.infoDesc}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-6">
                 {/* Email */}
                 <div className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 rounded-lg border bg-card/40 backdrop-blur-sm shadow-sm">
                   <div className="p-2 rounded-full bg-primary/10 text-primary">
@@ -173,10 +175,12 @@ export function Contact() {
                 </div>
               </CardContent>
             </Card>
-          </Reveal>
+          </TiltCard>
+        </Reveal>
 
-          {/* Availability Status */}
-          <Reveal delay={0.2}>
+        {/* Availability Status */}
+        <Reveal delay={0.2}>
+          <TiltCard>
             <Card className="border-primary/20">
               <CardContent className="flex items-center justify-center gap-4 py-8">
                 <span className="relative flex h-3 w-3">
@@ -188,7 +192,8 @@ export function Contact() {
                 </p>
               </CardContent>
             </Card>
-          </Reveal>
+          </TiltCard>
+        </Reveal>
         </div>
       </div>
     </section>
