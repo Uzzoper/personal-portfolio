@@ -21,6 +21,9 @@ import {
   FaBolt,
   FaCode,
   FaExternalLinkAlt,
+  FaRobot,
+  FaPlug,
+  FaDatabase,
 } from "react-icons/fa";
 import { VscCode } from "react-icons/vsc";
 import {
@@ -35,6 +38,7 @@ import {
   SiTailwindcss,
   SiVuedotjs,
   SiHtml5,
+  SiJavascript,
   SiGit,
   SiGithub,
   SiVercel,
@@ -46,6 +50,10 @@ import {
   SiDbeaver,
   SiAnthropic,
   SiLangchain,
+  SiUpstash,
+  SiSupabase,
+  SiVitest,
+  SiJest,
 } from "react-icons/si";
 import { Reveal } from "@/components/ui/reveal";
 
@@ -62,6 +70,7 @@ const skillIcons: Record<string, IconType> = {
   TailwindCSS: SiTailwindcss,
   "Vue.js": SiVuedotjs,
   "HTML/CSS": SiHtml5,
+  JavaScript: SiJavascript,
   Git: SiGit,
   GitHub: SiGithub,
   Vercel: SiVercel,
@@ -79,6 +88,13 @@ const skillIcons: Record<string, IconType> = {
   Ollama: FaBolt,
   "OpenRouter API": FaExternalLinkAlt,
   "AI Agents": SiLangchain,
+  "Agent Skills": FaRobot,
+  MCPs: FaPlug,
+  Neon: FaDatabase,
+  Upstash: SiUpstash,
+  Supabase: SiSupabase,
+  Vitest: SiVitest,
+  Jest: SiJest,
 };
 
 const skills = {
@@ -90,6 +106,8 @@ const skills = {
     "Node.js",
     "REST APIs",
     "JUnit",
+    "Vitest",
+    "Jest",
   ],
   Frontend: [
     "React",
@@ -98,9 +116,10 @@ const skills = {
     "TailwindCSS",
     "Vue.js",
     "HTML/CSS",
+    "JavaScript",
     "Canvas API",
   ],
-  DevOps: ["Docker", "Linux", "Vercel", "Railway", "Render", "CI/CD"],
+  DevOps: ["Docker", "Linux", "Vercel", "Railway", "Render", "CI/CD", "Neon", "Upstash", "Supabase"],
   "AI/ML": [
     "Python",
     "LLMs & RAG",
@@ -109,6 +128,8 @@ const skills = {
     "Ollama",
     "OpenRouter API",
     "AI Agents",
+    "Agent Skills",
+    "MCPs",
   ],
   "Tools & Others": [
     "Git",
