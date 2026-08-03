@@ -98,7 +98,7 @@ export const en = {
             },
             jobhunter: {
                 title: "Job Hunter",
-                description: "A Java + Spring Boot application that automates junior developer job search, analyzes listings with AI, and generates personalized application emails.",
+                description: "Automates junior job search across Gupy, InfoJobs and LinkedIn, analyzes each listing with AI and generates personalized application emails.",
             }
         }
     },
