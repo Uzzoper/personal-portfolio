@@ -232,6 +232,7 @@ export function About() {
               fill
               sizes="(max-width: 768px) 288px, (max-width: 1024px) 320px, 384px"
               className="rounded-full object-cover border-4 border-primary/20 shadow-xl"
+              quality={85}
               priority
             />
           </motion.div>
