@@ -19,6 +19,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://juanperuzzo.is-a.dev"),
   title: "Juan Peruzzo | Developer",
   description: "Building amazing web experiences",
 };
