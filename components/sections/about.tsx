@@ -21,6 +21,9 @@ import {
   FaBolt,
   FaCode,
   FaExternalLinkAlt,
+  FaRobot,
+  FaPlug,
+  FaDatabase,
 } from "react-icons/fa";
 import { VscCode } from "react-icons/vsc";
 import {
@@ -35,6 +38,7 @@ import {
   SiTailwindcss,
   SiVuedotjs,
   SiHtml5,
+  SiJavascript,
   SiGit,
   SiGithub,
   SiVercel,
@@ -46,8 +50,13 @@ import {
   SiDbeaver,
   SiAnthropic,
   SiLangchain,
+  SiUpstash,
+  SiSupabase,
+  SiVitest,
+  SiJest,
 } from "react-icons/si";
 import { Reveal } from "@/components/ui/reveal";
+import { TiltCard } from "@/components/ui/tilt-card";
 
 const skillIcons: Record<string, IconType> = {
   Java: FaJava,
@@ -62,6 +71,7 @@ const skillIcons: Record<string, IconType> = {
   TailwindCSS: SiTailwindcss,
   "Vue.js": SiVuedotjs,
   "HTML/CSS": SiHtml5,
+  JavaScript: SiJavascript,
   Git: SiGit,
   GitHub: SiGithub,
   Vercel: SiVercel,
@@ -79,6 +89,13 @@ const skillIcons: Record<string, IconType> = {
   Ollama: FaBolt,
   "OpenRouter API": FaExternalLinkAlt,
   "AI Agents": SiLangchain,
+  "Agent Skills": FaRobot,
+  MCPs: FaPlug,
+  Neon: FaDatabase,
+  Upstash: SiUpstash,
+  Supabase: SiSupabase,
+  Vitest: SiVitest,
+  Jest: SiJest,
 };
 
 const skills = {
@@ -90,6 +107,8 @@ const skills = {
     "Node.js",
     "REST APIs",
     "JUnit",
+    "Vitest",
+    "Jest",
   ],
   Frontend: [
     "React",
@@ -98,9 +117,10 @@ const skills = {
     "TailwindCSS",
     "Vue.js",
     "HTML/CSS",
+    "JavaScript",
     "Canvas API",
   ],
-  DevOps: ["Docker", "Linux", "Vercel", "Railway", "Render", "CI/CD"],
+  DevOps: ["Docker", "Linux", "Vercel", "Railway", "Render", "CI/CD", "Neon", "Upstash", "Supabase"],
   "AI/ML": [
     "Python",
     "LLMs & RAG",
@@ -109,6 +129,8 @@ const skills = {
     "Ollama",
     "OpenRouter API",
     "AI Agents",
+    "Agent Skills",
+    "MCPs",
   ],
   "Tools & Others": [
     "Git",
@@ -315,13 +337,14 @@ export function About() {
                       custom={i}
                       variants={skillCategoryVariants}
                     >
-                      <Card className="h-full">
-                        <CardHeader className="pb-3">
-                          <CardTitle className="text-xl">
-                            {category}
-                          </CardTitle>
-                        </CardHeader>
-                        <CardContent>
+                      <TiltCard className="h-full">
+                        <Card className="h-full">
+                          <CardHeader className="pb-3">
+                            <CardTitle className="text-xl">
+                              {category}
+                            </CardTitle>
+                          </CardHeader>
+                          <CardContent>
                           <motion.div
                             className="flex flex-wrap gap-2.5"
                             variants={{
@@ -367,7 +390,8 @@ export function About() {
                           </motion.div>
                         </CardContent>
                       </Card>
-                    </motion.div>
+                    </TiltCard>
+                  </motion.div>
                   ))}
                 </motion.div>
               </section>
@@ -376,56 +400,60 @@ export function About() {
 
           <aside className="space-y-6">
             <Reveal delay={0.3}>
-              <Card>
-                <CardHeader>
-                  <CardTitle>{dictionary.about.connect}</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="flex items-center gap-2 text-muted-foreground">
-                    <MapPin className="h-4 w-4" />
-                    <span>Ponta Grossa, PR - Brazil</span>
-                  </div>
-                  <div className="flex gap-3">
-                    {socialLinks.map((social) => (
-                      <Link
-                        key={social.label}
-                        href={social.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-2 rounded-lg border bg-card/10 hover:bg-primary hover:text-primary-foreground transition-colors"
-                      >
-                        <social.icon className="h-5 w-5" />
-                        <span className="sr-only">{social.label}</span>
-                      </Link>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+              <TiltCard>
+                <Card>
+                  <CardHeader>
+                    <CardTitle>{dictionary.about.connect}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <div className="flex items-center gap-2 text-muted-foreground">
+                      <MapPin className="h-4 w-4" />
+                      <span>Ponta Grossa, PR - Brazil</span>
+                    </div>
+                    <div className="flex gap-3">
+                      {socialLinks.map((social) => (
+                        <Link
+                          key={social.label}
+                          href={social.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-2 rounded-lg border bg-card/10 hover:bg-primary hover:text-primary-foreground transition-colors"
+                        >
+                          <social.icon className="h-5 w-5" />
+                          <span className="sr-only">{social.label}</span>
+                        </Link>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </TiltCard>
             </Reveal>
 
             <Reveal delay={0.4}>
-              <Card className="border-primary/50">
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <span className="relative flex h-2 w-2">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
-                      <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
-                    </span>
-                    {dictionary.about.openForWork}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    {dictionary.about.openForWorkDesc}
-                  </p>
-                  <Link
-                    href="/#contact"
-                    className="text-primary hover:underline text-sm font-medium"
-                  >
-                    {dictionary.about.getInTouch} →
-                  </Link>
-                </CardContent>
-              </Card>
+              <TiltCard>
+                <Card className="border-primary/50">
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2">
+                      <span className="relative flex h-2 w-2">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+                        <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
+                      </span>
+                      {dictionary.about.openForWork}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground mb-4">
+                      {dictionary.about.openForWorkDesc}
+                    </p>
+                    <Link
+                      href="/#contact"
+                      className="text-primary hover:underline text-sm font-medium"
+                    >
+                      {dictionary.about.getInTouch} →
+                    </Link>
+                  </CardContent>
+                </Card>
+              </TiltCard>
             </Reveal>
           </aside>
         </div>

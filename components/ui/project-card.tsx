@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "motion/react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { TiltCard } from "@/components/ui/tilt-card";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github, Gamepad2, Server } from "lucide-react";
 import { useLanguage } from "@/components/language-context";
@@ -60,11 +60,7 @@ export function ProjectCard({
   const ThemeIcon = theme.icon;
 
   return (
-    <motion.div
-      whileHover={{ y: -6, boxShadow: "0 20px 40px -12px rgba(0, 0, 0, 0.15)" }}
-      transition={{ type: "spring", stiffness: 300, damping: 20 }}
-      className="h-full"
-    >
+    <TiltCard className="h-full">
       <Card className="group overflow-hidden transition-colors duration-300 hover:border-primary/50 h-full flex flex-col">
         {imageUrl ? (
           <div className="relative w-full h-56 overflow-hidden">
@@ -168,6 +164,6 @@ export function ProjectCard({
           </div>
         </CardContent>
       </Card>
-    </motion.div>
+    </TiltCard>
   );
 }
