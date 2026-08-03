@@ -73,8 +73,9 @@ export const projects = [
     {
         id: "jobhunter",
         title: "Job Hunter",
-        description: "A Java + Spring Boot application that automates junior developer job search, analyzes listings with AI, and generates personalized application emails.",
-        technologies: ["Java 21", "Spring Boot", "PostgreSQL", "Docker", "Flyway", "Clean Architecture", "JWT", "OpenRouter AI"],
+        description: "Automates junior job search across Gupy, InfoJobs and LinkedIn, analyzes each listing with AI and generates personalized application emails.",
+        imageUrl: "/job-hunter.png",
+        technologies: ["Java 21", "Spring Boot", "PostgreSQL", "Docker", "Flyway", "Clean Architecture", "JWT", "OpenRouter AI", "Rust", "Playwright"],
         githubRepos: [
             { label: "Repository", url: "https://github.com/Uzzoper/job-hunter" },
         ],
