@@ -15,11 +15,12 @@ export const en = {
     hero: {
         openForWork: "Open for work",
         headline: "Building",
+        highlightWord: "products",
         typewriter: [
-            "software that ships.",
-            "systems that scale.",
-            "code that's maintainable.",
-            "architectures that last.",
+            "ideas that become products.",
+            "products that create value.",
+            "tools people actually use.",
+            "projects that come to life.",
         ],
         subtitle: "Hey there! I'm Juan Peruzzo. Software Developer and Indie Hacker. I build modern web applications, SaaS, and digital products with a focus on performance, clean architecture, and excellent user experience. Currently available for freelance projects and developer opportunities.",
         viewProjects: "View my projects",
