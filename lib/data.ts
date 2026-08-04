@@ -73,7 +73,7 @@ export const projects = [
     {
         id: "jobhunter",
         title: "Job Hunter",
-        description: "Automates junior job search across Gupy, InfoJobs and LinkedIn, analyzes each listing with AI and generates personalized application emails.",
+        description: "API that automates junior job search across Gupy, InfoJobs and LinkedIn, analyzes each listing with AI and generates ready-to-send application emails.",
         imageUrl: "/job-hunter.png",
         technologies: ["Java 21", "Spring Boot", "PostgreSQL", "Docker", "Flyway", "Clean Architecture", "JWT", "OpenRouter AI", "Rust", "Playwright"],
         githubRepos: [
