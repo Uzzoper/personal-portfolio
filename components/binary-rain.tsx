@@ -111,6 +111,7 @@ export const BinaryRain: React.FC<BinaryRainProps> = ({ className }) => {
     return (
         <canvas
             ref={canvasRef}
+            aria-hidden="true"
             className={className}
             style={{
                 display: "block",

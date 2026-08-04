@@ -119,6 +119,7 @@ export function ProjectCard({
                     href={repo.url}
                     target="_blank"
                     title={translatedLabel}
+                    aria-label={translatedLabel}
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
                     <Github className="h-5 w-5" />
@@ -130,6 +131,11 @@ export function ProjectCard({
                   href={demoUrl}
                   target="_blank"
                   title={
+                    isGame
+                      ? dictionary.projects.playGame
+                      : dictionary.projects.viewLive
+                  }
+                  aria-label={
                     isGame
                       ? dictionary.projects.playGame
                       : dictionary.projects.viewLive
