@@ -28,10 +28,22 @@ export const BinaryRain: React.FC<BinaryRainProps> = ({ className }) => {
             drops[i] = Math.random() * -100;
         }
 
-        // Cache --rain-fade once on mount instead of reading every frame
-        const fadeColor =
+        // Read --rain-fade from the current theme (light/dark) instead of
+        // caching it once, so toggling themes doesn't leave stale fade color
+        const readFadeColor = () =>
             getComputedStyle(canvas).getPropertyValue("--rain-fade") ||
             "rgba(0, 0, 0, 0.05)";
+
+        let fadeColor = readFadeColor();
+
+        // Re-read when the theme class on <html> changes (light <-> dark)
+        const themeObserver = new MutationObserver(() => {
+            fadeColor = readFadeColor();
+        });
+        themeObserver.observe(document.documentElement, {
+            attributes: true,
+            attributeFilter: ["class"],
+        });
 
         let animationFrameId: number;
         let isAnimating = true;
@@ -90,6 +102,7 @@ export const BinaryRain: React.FC<BinaryRainProps> = ({ className }) => {
         return () => {
             isAnimating = false;
             cancelAnimationFrame(animationFrameId);
+            themeObserver.disconnect();
             document.removeEventListener("visibilitychange", handleVisibilityChange);
             window.removeEventListener("resize", handleResize);
         };
