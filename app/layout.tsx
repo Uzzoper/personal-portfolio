@@ -21,7 +21,32 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://juanperuzzo.is-a.dev"),
   title: "Juan Peruzzo | Developer",
-  description: "Building amazing web experiences",
+  description:
+    "Software developer specializing in high-performance web apps, clean architecture and SaaS. See my projects, skills and get in touch for freelance work.",
+  openGraph: {
+    title: "Juan Peruzzo | Developer",
+    description:
+      "Software developer specializing in high-performance web apps, clean architecture and SaaS. See my projects, skills and get in touch for freelance work.",
+    url: "https://juanperuzzo.is-a.dev",
+    siteName: "Juan Peruzzo",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "/portfolio.png",
+        width: 1919,
+        height: 924,
+        alt: "Juan Peruzzo Portfolio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Juan Peruzzo | Developer",
+    description:
+      "Software developer specializing in high-performance web apps, clean architecture and SaaS. See my projects, skills and get in touch for freelance work.",
+    images: ["/portfolio.png"],
+  },
 };
 
 export default function RootLayout({
