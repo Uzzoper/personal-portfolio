@@ -382,7 +382,12 @@ export function About() {
                                     variant="secondary"
                                     className="gap-1.5 text-sm px-3 py-1.5"
                                   >
-                                    {Icon && <Icon className="h-4 w-4" />}
+                                    {Icon && (
+                                      <Icon
+                                        className="h-4 w-4"
+                                        aria-hidden="true"
+                                      />
+                                    )}
                                     {skill}
                                   </Badge>
                                 </motion.div>
