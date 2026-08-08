@@ -154,7 +154,7 @@ const socialLinks = [
     label: "GitHub",
   },
   {
-    href: "https://www.linkedin.com/in/juan-antonio-peruzzo-10a343315/",
+    href: "https://www.linkedin.com/in/juan-antonio-peruzzo",
     icon: Linkedin,
     label: "LinkedIn",
   },

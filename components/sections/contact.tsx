@@ -164,7 +164,7 @@ export function Contact() {
                     className="w-full md:size-lg"
                   >
                     <Link
-                      href="https://www.linkedin.com/in/juan-antonio-peruzzo-10a343315/"
+                      href="https://www.linkedin.com/in/juan-antonio-peruzzo"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
