@@ -6,7 +6,13 @@ interface BinaryRainProps {
     className?: string;
 }
 
-const COLORS = ["#22c55e", "#4ade80", "#16a34a", "#86efac"];
+const DEFAULT_COLORS = ["#22c55e", "#4ade80", "#16a34a", "#86efac"];
+
+const readColors = (el: Element) => {
+    const raw = getComputedStyle(el).getPropertyValue("--rain-colors").trim();
+    if (!raw) return DEFAULT_COLORS;
+    return raw.split(",").map((c) => c.trim());
+};
 
 export const BinaryRain: React.FC<BinaryRainProps> = ({ className }) => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -35,10 +41,12 @@ export const BinaryRain: React.FC<BinaryRainProps> = ({ className }) => {
             "rgba(0, 0, 0, 0.05)";
 
         let fadeColor = readFadeColor();
+        let colors = readColors(canvas);
 
         // Re-read when the theme class on <html> changes (light <-> dark)
         const themeObserver = new MutationObserver(() => {
             fadeColor = readFadeColor();
+            colors = readColors(canvas);
         });
         themeObserver.observe(document.documentElement, {
             attributes: true,
@@ -56,7 +64,7 @@ export const BinaryRain: React.FC<BinaryRainProps> = ({ className }) => {
 
             for (let i = 0; i < drops.length; i++) {
                 const text = Math.random() > 0.5 ? "1" : "0";
-                ctx.fillStyle = COLORS[Math.floor(Math.random() * COLORS.length)];
+                ctx.fillStyle = colors[Math.floor(Math.random() * colors.length)];
 
                 const x = i * 20;
                 const y = drops[i] * 20;
