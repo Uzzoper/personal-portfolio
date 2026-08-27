@@ -59,7 +59,7 @@ export function Hero() {
               delaySpeed={2000}
               cursor
               cursorStyle="_"
-              highlightWord={dictionary.hero.highlightWord}
+              highlightWords={dictionary.hero.highlightWords}
               highlightClass="text-green-500"
             />
           </motion.h1>

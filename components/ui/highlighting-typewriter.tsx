@@ -8,7 +8,7 @@ interface HighlightingTypewriterProps {
   typeSpeed?: number;
   deleteSpeed?: number;
   delaySpeed?: number;
-  highlightWord?: string;
+  highlightWords?: string[];
   highlightClass?: string;
   cursor?: boolean;
   cursorStyle?: string;
@@ -20,7 +20,7 @@ export function HighlightingTypewriter({
   typeSpeed = 70,
   deleteSpeed = 50,
   delaySpeed = 2000,
-  highlightWord = "software",
+  highlightWords = ["software"],
   highlightClass = "text-green-500",
   cursor = true,
   cursorStyle = "_",
@@ -94,15 +94,19 @@ export function HighlightingTypewriter({
     words.length,
   ]);
 
-  // Split display text to highlight the target word
+  // Split display text to highlight any of the target words
   const renderHighlightedText = () => {
-    if (!highlightWord) return displayText;
+    const terms = highlightWords ?? [];
+    if (!terms.length) return displayText;
 
-    const regex = new RegExp(`(${highlightWord.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+    const pattern = terms
+      .map((t) => t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
+      .join("|");
+    const regex = new RegExp(`(${pattern})`, "gi");
     const parts = displayText.split(regex);
 
     return parts.map((part, i) =>
-      part.toLowerCase() === highlightWord.toLowerCase() ? (
+      terms.some((t) => part.toLowerCase() === t.toLowerCase()) ? (
         <span key={i} className={highlightClass}>
           {part}
         </span>

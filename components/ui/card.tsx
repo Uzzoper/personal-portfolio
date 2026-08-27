@@ -12,7 +12,7 @@ function Card({ className, ...props }: React.ComponentProps<"div">) {
         "shadow-[0_1px_2px_rgba(0,0,0,0.04),0_12px_32px_-16px_rgba(0,0,0,0.14)]",
         "dark:shadow-[0_1px_2px_rgba(0,0,0,0.5),0_20px_48px_-20px_rgba(0,0,0,0.65)]",
         // Crisp light edge along the top rim.
-        "before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:h-px before:bg-gradient-to-r before:from-transparent before:via-white/70 before:to-transparent",
+        "before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:h-px before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent",
         "dark:before:via-white/10",
         // Faint top sheen to give the surface subtle volume.
         "after:pointer-events-none after:absolute after:inset-x-0 after:top-0 after:h-16 after:bg-gradient-to-b after:from-white/[0.04] after:to-transparent",
