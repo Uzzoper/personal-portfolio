@@ -73,7 +73,7 @@ export const projects = [
     {
         id: "jobhunter",
         title: "Job Hunter",
-        description: "End-to-end API that scrapes junior jobs from Gupy, InfoJobs and LinkedIn via a Playwright microservice, scores each with AI, drafts tailored emails and ATS-optimized resumes, and auto-sends via a review-gated scheduler through a Hermes Agent — Clean Architecture, Docker, Rust TUI.",
+        description: "API that scrapes junior jobs via scraping, scores with AI, drafts emails and ATS resumes and auto-sends via review-gated Hermes Agent.",
         imageUrl: "/job-hunter.png",
         technologies: ["Java 21", "Spring Boot", "PostgreSQL", "Docker", "Flyway", "Clean Architecture", "JWT", "OpenRouter AI", "Rust", "Playwright"],
         githubRepos: [
