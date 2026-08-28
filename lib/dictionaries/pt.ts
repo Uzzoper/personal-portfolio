@@ -99,7 +99,7 @@ export const pt = {
             },
             jobhunter: {
                 title: "Job Hunter",
-                description: "API que automatiza a busca de vagas júnior no Gupy, InfoJobs e LinkedIn, analisa cada anúncio com IA e gera e-mails de candidatura prontos para enviar.",
+                description: "API completa que coleta vagas júnior no Gupy, InfoJobs e LinkedIn via microserviço Playwright, pontua cada uma 0-100 com IA, gera e-mails personalizados e currículos ATS, e envia automaticamente com fila revisável através do Hermes Agent — Clean Architecture, Docker e TUI em Rust.",
             }
         }
     },
