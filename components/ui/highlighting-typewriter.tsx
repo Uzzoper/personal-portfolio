@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 interface HighlightingTypewriterProps {
   words: string[];
@@ -28,7 +28,6 @@ export function HighlightingTypewriter({
   const [displayText, setDisplayText] = useState("");
   const [wordIndex, setWordIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const [isPaused, setIsPaused] = useState(false);
   const [showCursor, setShowCursor] = useState(true);
 
   const currentWord = words[wordIndex] || "";
@@ -47,14 +46,6 @@ export function HighlightingTypewriter({
   useEffect(() => {
     let timeout: NodeJS.Timeout;
 
-    if (isPaused) {
-      timeout = setTimeout(() => {
-        setIsPaused(false);
-        setIsDeleting(true);
-      }, delaySpeed);
-      return () => clearTimeout(timeout);
-    }
-
     if (!isDeleting) {
       // Typing forward
       if (displayText.length < currentWord.length) {
@@ -62,8 +53,10 @@ export function HighlightingTypewriter({
           setDisplayText(currentWord.slice(0, displayText.length + 1));
         }, typeSpeed);
       } else {
-        // Word complete - pause before deleting
-        setIsPaused(true);
+        // Word complete - pause (delaySpeed) before starting to delete
+        timeout = setTimeout(() => {
+          setIsDeleting(true);
+        }, delaySpeed);
       }
     } else {
       // Deleting backward
@@ -72,11 +65,13 @@ export function HighlightingTypewriter({
           setDisplayText(displayText.slice(0, -1));
         }, deleteSpeed);
       } else {
-        // Move to next word
-        setIsDeleting(false);
-        const nextIndex = (wordIndex + 1) % words.length;
-        if (nextIndex === 0 && !loop) return;
-        setWordIndex(nextIndex);
+        // Word fully deleted - move to next word
+        timeout = setTimeout(() => {
+          const nextIndex = (wordIndex + 1) % words.length;
+          if (nextIndex === 0 && !loop) return;
+          setIsDeleting(false);
+          setWordIndex(nextIndex);
+        }, 0);
       }
     }
 
@@ -84,7 +79,6 @@ export function HighlightingTypewriter({
   }, [
     displayText,
     isDeleting,
-    isPaused,
     currentWord,
     wordIndex,
     typeSpeed,
