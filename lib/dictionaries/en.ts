@@ -99,7 +99,7 @@ export const en = {
             },
             jobhunter: {
                 title: "Job Hunter",
-                description: "API that automates junior job search across Gupy, InfoJobs and LinkedIn, analyzes each listing with AI and generates ready-to-send application emails.",
+                description: "API that scrapes junior jobs via scraping, scores with AI, drafts emails and ATS resumes and auto-sends via review-gated Hermes Agent.",
             }
         }
     },

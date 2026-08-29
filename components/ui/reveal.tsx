@@ -23,8 +23,9 @@ export function Reveal({
   once = true,
   as: Tag = "div",
 }: RevealProps) {
+  const MotionComponent = Tag === "section" ? motion.section : motion.div;
   return (
-    <motion.div
+    <MotionComponent
       initial={{ opacity: 0, y }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once, margin: "-80px" }}
@@ -32,6 +33,6 @@ export function Reveal({
       className={cn(className)}
     >
       {children}
-    </motion.div>
+    </MotionComponent>
   );
 }

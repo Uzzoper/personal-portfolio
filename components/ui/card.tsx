@@ -8,7 +8,7 @@ function Card({ className, ...props }: React.ComponentProps<"div">) {
       data-slot="card"
       className={cn(
         // Physical base treatment: layered shadow (contact + diffuse), deeper in dark mode.
-        "relative flex flex-col gap-6 overflow-hidden rounded-xl border bg-card text-card-foreground py-6 backdrop-blur-lg",
+        "relative flex flex-col gap-6 overflow-hidden rounded-xl border bg-card text-card-foreground py-6 backdrop-blur-sm",
         "shadow-[0_1px_2px_rgba(0,0,0,0.04),0_12px_32px_-16px_rgba(0,0,0,0.14)]",
         "dark:shadow-[0_1px_2px_rgba(0,0,0,0.5),0_20px_48px_-20px_rgba(0,0,0,0.65)]",
         // Crisp light edge along the top rim.

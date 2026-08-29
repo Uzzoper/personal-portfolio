@@ -109,7 +109,7 @@ export function ProjectCard({
             <div className="flex items-center gap-3">
               {githubRepos?.map((repo) => {
                 const labelKey = repo.label.toLowerCase() as keyof typeof dictionary.projects;
-                const translated = (dictionary.projects as any)[labelKey];
+                const translated = dictionary.projects[labelKey];
                 const translatedLabel =
                   typeof translated === "string" ? translated : repo.label;
 
@@ -155,7 +155,7 @@ export function ProjectCard({
               )}
             </div>
           </CardTitle>
-          <CardDescription className="line-clamp-3">
+          <CardDescription className="line-clamp-3 [transform:translateZ(0)] antialiased">
             {description}
           </CardDescription>
         </CardHeader>
