@@ -120,13 +120,22 @@ export function TiltCard({
       onPointerMove={handlePointerMove}
       onPointerEnter={handlePointerEnter}
       onPointerLeave={handlePointerLeave}
-      style={{
-        rotateX: smoothX,
-        rotateY: smoothY,
-        transformPerspective: 900,
-        willChange: "transform",
-        boxShadow,
-      }}
+      style={
+        hovered
+          ? {
+              rotateX: smoothX,
+              rotateY: smoothY,
+              transformPerspective: 900,
+              willChange: "transform",
+              boxShadow,
+            }
+          : {
+              rotateX: 0,
+              rotateY: 0,
+              willChange: "auto",
+              boxShadow,
+            }
+      }
     >
       {glare && (
         <div
