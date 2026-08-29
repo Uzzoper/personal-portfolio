@@ -155,7 +155,7 @@ export function ProjectCard({
               )}
             </div>
           </CardTitle>
-          <CardDescription className="line-clamp-3">
+          <CardDescription className="line-clamp-3 [transform:translateZ(0)] antialiased">
             {description}
           </CardDescription>
         </CardHeader>
