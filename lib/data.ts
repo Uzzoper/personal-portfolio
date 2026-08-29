@@ -26,6 +26,16 @@ export const projects = [
         imageUrl: "/jishuu.png",
     },
     {
+        id: "jobhunter",
+        title: "Job Hunter",
+        description: "API that scrapes junior jobs via scraping, scores with AI, drafts emails and ATS resumes and auto-sends via review-gated Hermes Agent.",
+        imageUrl: "/job-hunter.png",
+        technologies: ["Java 21", "Spring Boot", "PostgreSQL", "Docker", "Flyway", "Clean Architecture", "JWT", "OpenRouter AI", "Rust", "Playwright"],
+        githubRepos: [
+            { label: "Repository", url: "https://github.com/Uzzoper/job-hunter" },
+        ],
+    },
+    {
         id: "flappynaruu",
         title: "Flappy Naruu",
         description: "A fun Flappy Bird-style game built from zero with modern web technologies.",
@@ -69,16 +79,6 @@ export const projects = [
         ],
         demoUrl: "https://otermometrodepg.vercel.app",
         imageUrl: "/thermometer.png",
-    },
-    {
-        id: "jobhunter",
-        title: "Job Hunter",
-        description: "API that scrapes junior jobs via scraping, scores with AI, drafts emails and ATS resumes and auto-sends via review-gated Hermes Agent.",
-        imageUrl: "/job-hunter.png",
-        technologies: ["Java 21", "Spring Boot", "PostgreSQL", "Docker", "Flyway", "Clean Architecture", "JWT", "OpenRouter AI", "Rust", "Playwright"],
-        githubRepos: [
-            { label: "Repository", url: "https://github.com/Uzzoper/job-hunter" },
-        ],
     },
     {
         id: "eventclean",
