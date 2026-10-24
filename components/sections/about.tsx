@@ -24,6 +24,13 @@ import {
   FaRobot,
   FaPlug,
   FaDatabase,
+  FaServer,
+  FaPalette,
+  FaInfinity,
+  FaLayerGroup,
+  FaSyncAlt,
+  FaRocket,
+  FaTasks,
 } from "react-icons/fa";
 import { VscCode } from "react-icons/vsc";
 import {
@@ -54,6 +61,7 @@ import {
   SiSupabase,
   SiVitest,
   SiJest,
+  SiJunit5,
 } from "react-icons/si";
 import { Reveal } from "@/components/ui/reveal";
 import { TiltCard } from "@/components/ui/tilt-card";
@@ -64,7 +72,10 @@ const skillIcons: Record<string, IconType> = {
   PostgreSQL: SiPostgresql,
   SQLite: SiSqlite,
   "Node.js": SiNodedotjs,
-  Docker: SiDocker,
+  "REST APIs": FaServer,
+  JUnit: SiJunit5,
+  Vitest: SiVitest,
+  Jest: SiJest,
   React: SiReact,
   TypeScript: SiTypescript,
   "Next.js": SiNextdotjs,
@@ -72,80 +83,111 @@ const skillIcons: Record<string, IconType> = {
   "Vue.js": SiVuedotjs,
   "HTML/CSS": SiHtml5,
   JavaScript: SiJavascript,
-  Git: SiGit,
-  GitHub: SiGithub,
+  "Canvas API": FaPalette,
+  Docker: SiDocker,
+  Linux: SiLinux,
   Vercel: SiVercel,
   Railway: SiRailway,
   Render: SiRender,
-  Linux: SiLinux,
+  "CI/CD": FaInfinity,
+  Neon: FaDatabase,
+  Upstash: SiUpstash,
+  Supabase: SiSupabase,
+  Python: FaPython,
+  "LLMs & RAG": FaBrain,
+  "AI Agents": SiLangchain,
+  "Agent Skills": FaRobot,
+  MCPs: FaPlug,
+  "OpenRouter API": FaExternalLinkAlt,
+  "Claude Code": SiAnthropic,
+  Ollama: FaBolt,
+  OpenCode: FaCode,
+  Git: SiGit,
+  GitHub: SiGithub,
   Intellij: SiIntellijidea,
   VSCode: VscCode,
   Postman: SiPostman,
   DBeaver: SiDbeaver,
-  Python: FaPython,
-  "LLMs & RAG": FaBrain,
-  OpenCode: FaCode,
-  "Claude Code": SiAnthropic,
-  Ollama: FaBolt,
-  "OpenRouter API": FaExternalLinkAlt,
-  "AI Agents": SiLangchain,
-  "Agent Skills": FaRobot,
-  MCPs: FaPlug,
-  Neon: FaDatabase,
-  Upstash: SiUpstash,
-  Supabase: SiSupabase,
-  Vitest: SiVitest,
-  Jest: SiJest,
+  "Clean Architecture": FaLayerGroup,
+  Agile: FaSyncAlt,
+  pgAdmin: SiPostgresql,
+  Antigravity: FaRocket,
+  Kanban: FaTasks,
 };
 
-const skills = {
-  Backend: [
-    "Java",
-    "Spring Boot",
-    "PostgreSQL",
-    "SQLite",
-    "Node.js",
-    "REST APIs",
-    "JUnit",
-    "Vitest",
-    "Jest",
-  ],
-  Frontend: [
-    "React",
-    "TypeScript",
-    "Next.js",
-    "TailwindCSS",
-    "Vue.js",
-    "HTML/CSS",
-    "JavaScript",
-    "Canvas API",
-  ],
-  DevOps: ["Docker", "Linux", "Vercel", "Railway", "Render", "CI/CD", "Neon", "Upstash", "Supabase"],
-  "AI/ML": [
-    "Python",
-    "LLMs & RAG",
-    "OpenCode",
-    "Claude Code",
-    "Ollama",
-    "OpenRouter API",
-    "AI Agents",
-    "Agent Skills",
-    "MCPs",
-  ],
-  "Tools & Others": [
-    "Git",
-    "GitHub",
-    "Intellij",
-    "VSCode",
-    "Postman",
-    "DBeaver",
-    "Clean Architecture",
-    "Agile",
-    "pgAdmin",
-    "Antigravity",
-    "Kanban",
-  ],
-};
+const skillCategories = [
+  {
+    key: "backend" as const,
+    skills: [
+      "Java",
+      "Spring Boot",
+      "PostgreSQL",
+      "SQLite",
+      "Node.js",
+      "REST APIs",
+      "JUnit",
+      "Vitest",
+      "Jest",
+    ],
+  },
+  {
+    key: "frontend" as const,
+    skills: [
+      "React",
+      "TypeScript",
+      "Next.js",
+      "TailwindCSS",
+      "Vue.js",
+      "HTML/CSS",
+      "JavaScript",
+      "Canvas API",
+    ],
+  },
+  {
+    key: "devops" as const,
+    skills: [
+      "Docker",
+      "Linux",
+      "Vercel",
+      "Railway",
+      "Render",
+      "CI/CD",
+      "Neon",
+      "Upstash",
+      "Supabase",
+    ],
+  },
+  {
+    key: "aiml" as const,
+    skills: [
+      "Python",
+      "LLMs & RAG",
+      "OpenCode",
+      "Claude Code",
+      "Ollama",
+      "OpenRouter API",
+      "AI Agents",
+      "Agent Skills",
+      "MCPs",
+    ],
+  },
+  {
+    key: "tools" as const,
+    skills: [
+      "Git",
+      "GitHub",
+      "Intellij",
+      "VSCode",
+      "Postman",
+      "DBeaver",
+      "Clean Architecture",
+      "Agile",
+      "pgAdmin",
+      "Antigravity",
+      "Kanban",
+    ],
+  },
+];
 
 const socialLinks = [
   {
@@ -332,9 +374,9 @@ export function About() {
                   whileInView="show"
                   viewport={{ once: true, margin: "-60px" }}
                 >
-                  {Object.entries(skills).map(([category, items], i) => (
+                  {skillCategories.map(({ key, skills: items }, i) => (
                     <motion.div
-                      key={category}
+                      key={key}
                       custom={i}
                       variants={skillCategoryVariants}
                     >
@@ -342,7 +384,7 @@ export function About() {
                         <Card className="h-full">
                           <CardHeader className="pb-3">
                             <CardTitle className="text-xl">
-                              {category}
+                              {dictionary.about.skillsCategories[key]}
                             </CardTitle>
                           </CardHeader>
                           <CardContent>

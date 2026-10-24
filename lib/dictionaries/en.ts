@@ -52,6 +52,13 @@ export const en = {
             },
         ],
         skillsTitle: "Skills & Technologies",
+        skillsCategories: {
+            backend: "Backend",
+            frontend: "Frontend",
+            devops: "DevOps",
+            aiml: "AI / Machine Learning",
+            tools: "Tools & Others",
+        },
         connect: "Connect",
         openForWork: "Open for Work",
         openForWorkDesc: "I'm currently looking for new opportunities. Have a project in mind or need collaboration? I'd love to chat and understand how I can help!",

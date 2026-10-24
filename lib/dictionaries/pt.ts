@@ -52,6 +52,13 @@ export const pt = {
             },
         ],
         skillsTitle: "Habilidades e Tecnologias",
+        skillsCategories: {
+            backend: "Backend",
+            frontend: "Frontend",
+            devops: "DevOps",
+            aiml: "IA / Machine Learning",
+            tools: "Ferramentas & Outros",
+        },
         connect: "Conectar",
         openForWork: "Disponível para Trabalho",
         openForWorkDesc: "Atualmente estou em busca de novas oportunidades. Tem um projeto em mente ou precisa de colaboração? Adoraria conversar e entender como posso ajudar!",
