@@ -32,21 +32,12 @@ export const metadata: Metadata = {
     siteName: "Juan Peruzzo",
     locale: "en_US",
     type: "website",
-    images: [
-      {
-        url: "/portfolio.png",
-        width: 1919,
-        height: 924,
-        alt: "Juan Peruzzo Portfolio",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Juan Peruzzo | Developer",
     description:
       "Software developer specializing in high-performance web apps, clean architecture and SaaS. See my projects, skills and get in touch for freelance work.",
-    images: ["/portfolio.png"],
   },
 };
 
@@ -75,6 +66,29 @@ export default function RootLayout({
         </ThemeProvider>
         <Analytics />
         <SpeedInsights />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Juan Peruzzo",
+              url: "https://juanperuzzo.is-a.dev",
+              jobTitle: "Software Developer",
+              description:
+                "Software developer specializing in high-performance web apps, clean architecture and SaaS.",
+              sameAs: ["https://github.com/Uzzoper"],
+              knowsAbout: [
+                "Java",
+                "Spring Boot",
+                "React",
+                "Next.js",
+                "TypeScript",
+                "SaaS",
+              ],
+            }),
+          }}
+        />
       </body>
     </html>
   );
