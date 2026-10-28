@@ -111,7 +111,7 @@ export const pt = {
             },
             jobhunter: {
                 title: "Job Hunter",
-                description: "API que coleta vagas júnior via scraping, pontua com IA, gera e-mails e currículos ATS e envia com fila revisável via Hermes Agent.",
+                description: "Agente de candidaturas a vagas júnior: scraping multi-portal, score de match com IA nas suas preferências de trabalho, e-mails de candidatura e currículos ATS personalizados, e um bot Hermes que aplica com checkpoints de confirmação e submissões verificadas.",
             }
         }
     },
