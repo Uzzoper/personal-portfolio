@@ -28,9 +28,9 @@ export const projects = [
     {
         id: "jobhunter",
         title: "Job Hunter",
-        description: "API that scrapes junior jobs via scraping, scores with AI, drafts emails and ATS resumes and auto-sends via review-gated Hermes Agent.",
+        description: "Automated junior-dev job hunter: multi-portal scraping, AI match scoring against your work preferences, personalized application emails and ATS resumes, and a Hermes bot that applies with confirmation gates and verified submits.",
         imageUrl: "/job-hunter.png",
-        technologies: ["Java 21", "Spring Boot", "PostgreSQL", "Docker", "Flyway", "Clean Architecture", "JWT", "OpenRouter AI", "Rust", "Playwright"],
+        technologies: ["Java 21", "Spring Boot 4", "SQLite", "Flyway", "Clean Architecture", "JWT", "Hermes Agent", "Rust", "Playwright", "Docker"],
         githubRepos: [
             { label: "Repository", url: "https://github.com/Uzzoper/job-hunter" },
         ],

@@ -111,7 +111,7 @@ export const en = {
             },
             jobhunter: {
                 title: "Job Hunter",
-                description: "API that scrapes junior jobs via scraping, scores with AI, drafts emails and ATS resumes and auto-sends via review-gated Hermes Agent.",
+                description: "Automated junior-dev job hunter: multi-portal scraping, AI match scoring against your work preferences, personalized application emails and ATS resumes, and a Hermes bot that applies with confirmation gates and verified submits.",
             }
         }
     },
